@@ -1,6 +1,6 @@
 characters = {
 	IND_paul_v_mcnutt = {
-		name = "Paul V. McNutt"
+		name = IND_paul_v_mcnutt
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/PaulNutt.dds"

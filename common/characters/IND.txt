@@ -1,0 +1,14 @@
+characters = {
+	IND_paul_v_mcnutt = {
+		name = "Paul V. McNutt"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PaulNutt.dds"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+		}
+	}
+}

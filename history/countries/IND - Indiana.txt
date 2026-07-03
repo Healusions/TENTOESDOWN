@@ -25,3 +25,5 @@ set_technology = {
 }
 
 recruit_character = IND_paul_v_mcnutt
+
+###LB NEW LINE FOR RECRUIT CHARACTER BUG

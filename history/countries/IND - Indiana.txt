@@ -25,6 +25,14 @@ set_technology = {
 	basic_train = 1
 }
 
+add_ideas = {
+	IND_the_machine
+	IND_two_percent_club
+	IND_martial_law_terre_haute
+	IND_federal_embargo
+	IND_consortium_credit
+}
+
 recruit_character = IND_paul_v_mcnutt
 
 ###LB NEW LINE FOR RECRUIT CHARACTER BUG

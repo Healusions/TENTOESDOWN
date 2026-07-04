@@ -1,0 +1,62 @@
+
+ideas = {
+	country = {
+
+		IND_the_machine = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+			}
+		}
+
+		IND_martial_law_terre_haute = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				stability_factor = -0.05
+				communism_drift = -0.02
+			}
+		}
+
+		IND_federal_embargo = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = great_depression
+			modifier = {
+				consumer_goods_factor = 0.05
+				trade_opinion_factor = -0.5
+				production_speed_buildings_factor = -0.1
+			}
+		}
+
+		IND_consortium_credit = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				political_power_factor = -0.1
+			}
+		}
+
+		IND_two_percent_club = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_pp_unity_bonus
+			modifier = {
+				political_power_gain = 0.1
+				democratic_drift = 0.02
+				consumer_goods_factor = 0.02
+			}
+		}
+	}
+}

@@ -19,15 +19,12 @@ state={
 		add_core_of = USA
 		add_core_of = IND
 		victory_points = {
-			4531 3
-		}
-		victory_points = {
-			4437 1
+			11635 3
 		}
 	}
 
 	provinces={
-		4437 11635 11621 4531 9796
+		11635 11621 12437 1881 10448 4527
 	}
 
 	local_supplies=0.0

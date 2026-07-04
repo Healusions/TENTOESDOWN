@@ -1,0 +1,32 @@
+
+state={
+	id=NEWID1
+	name="STATE_NEWID1"
+	manpower = 450000
+
+	resources = {
+		steel = 20 # deliberate buff: Gary Works
+	}
+
+	state_category = city
+
+	history={
+		owner = IND
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1 # deliberate buff: steel belt industry
+		}
+		add_core_of = USA
+		add_core_of = IND
+		victory_points = {
+			12437 3
+		}
+	}
+
+	provinces={
+		12437 6713
+	}
+
+	local_supplies=0.0
+}

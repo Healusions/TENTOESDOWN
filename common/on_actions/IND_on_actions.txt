@@ -1,0 +1,10 @@
+
+on_actions = {
+	on_startup = {
+		effect = {
+			IND = {
+				country_event = { id = IND_intro.1 hours = 6 }
+			}
+		}
+	}
+}

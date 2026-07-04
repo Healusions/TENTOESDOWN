@@ -12,6 +12,7 @@ l_english:
  VICTORY_POINTS_9654:0 "South Bend"
  VICTORY_POINTS_11635:0 "Evansville"
  VICTORY_POINTS_12437:0 "Terre Haute"
+
  IND_the_indianapolis_resolves:0 "The Indianapolis Resolves"
  IND_the_indianapolis_resolves_desc:0 "Passed in special session in the winter of 1935, the Resolves declare nothing. They simply decline, article by article, to recognize any federal authority to which Indiana has not consented. The lawyers call it interposition. Washington calls it treason. For now, nobody is shooting."
  IND_crossroads_of_america:0 "The Crossroads of America"
@@ -30,6 +31,7 @@ l_english:
  IND_the_wire_still_lives_desc:0 "They broke Terre Haute with bayonets and martial law and told themselves that was the end of it. The wire is still live. It runs from the Wabash to the Calumet, and it is waiting."
  IND_an_american_crown:0 "An American Crown"
  IND_an_american_crown_desc:0 "Say it plainly, in the clubs and in the papers: the republic failed. What the interior of this continent requires is continuity beyond any one man's ambition. There is a family in Indianapolis whose name already sounds like government."
+
  IND_the_machine:0 "The McNutt Machine"
  IND_the_machine_desc:0 "The Executive Reorganization Act of 1933 collapsed one hundred sixty-nine boards and commissions into eight departments, all of them answering to the Governor. It is efficient. It is loyal. It is not, strictly speaking, anything the founders would recognize."
  IND_two_percent_club:0 "The Two Percent Club"
@@ -40,3 +42,12 @@ l_english:
  IND_federal_embargo_desc:0 "Washington has not fired a shot. Washington has instead suspended rail interchange licenses, frozen correspondent accounts, and discovered urgent safety concerns with every barge on the Ohio. It is a war conducted entirely in paperwork, and Indiana is losing it slowly."
  IND_consortium_credit:0 "Consortium Credit"
  IND_consortium_credit_desc:0 "The money arrives by way of a holding company in Chicago, and it arrives whenever it is needed, and no one ever asks for collateral. The State Treasurer has begun to wonder, privately, what exactly has already been pledged."
+
+ IND_the_terre_haute_question:0 "The Terre Haute Question"
+ IND_the_terre_haute_question_desc:0 "The Guard broke the general strike in July of 1935 and has occupied the city ever since. Somewhere beneath the quiet, the movement that raised the strike is reorganizing. Guard intelligence currently counts [?IND_underground|.0] known cells — and does not pretend to know how many it cannot see."
+ IND_th_hold_the_line:0 "Hold the Line"
+ IND_th_hold_the_line_desc:0 "Maintain the occupation as it stands. The curfew holds, the halls stay padlocked, the city stays quiet. Quiet is not the same as settled, and every month of bayonets on Wabash Avenue writes another name in somebody's ledger of grievances."
+ IND_th_ease_the_curfews:0 "Ease the Curfews"
+ IND_th_ease_the_curfews_desc:0 "Let the streetlights matter again. Reopen the halls under observation; let the men hold meetings the Guard can attend in plainclothes. What organizes in the open drains what organizes in the dark — and what organizes in the open, votes."
+ IND_th_sweep_the_halls:0 "Sweep the Union Halls"
+ IND_th_sweep_the_halls_desc:0 "Names, addresses, printing presses. The Guard knows where half of it is; informants can find the rest. Done cleanly, the underground loses years of work in one night. Done badly, Terre Haute gets its martyrs."

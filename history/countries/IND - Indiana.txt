@@ -33,6 +33,8 @@ add_ideas = {
 	IND_consortium_credit
 }
 
+set_variable = { IND_underground = 10 }
+
 recruit_character = IND_paul_v_mcnutt
 
 ###LB NEW LINE FOR RECRUIT CHARACTER BUG

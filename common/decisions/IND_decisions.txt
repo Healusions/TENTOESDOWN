@@ -1,0 +1,70 @@
+
+IND_the_terre_haute_question = {
+
+	IND_th_hold_the_line = {
+		icon = generic_martial_law
+		cost = 25
+		days_remove = 30
+		fire_only_once = no
+		visible = { has_idea = IND_martial_law_terre_haute }
+		available = { NOT = { has_country_flag = IND_th_posture_set } }
+		complete_effect = {
+			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
+		}
+		remove_effect = {
+			add_to_variable = { IND_underground = 2 }
+			clamp_variable = { var = IND_underground min = 0 max = 100 }
+		}
+	}
+
+	IND_th_ease_the_curfews = {
+		icon = generic_civil_support
+		cost = 50
+		days_remove = 30
+		fire_only_once = no
+		visible = { has_idea = IND_martial_law_terre_haute }
+		available = { NOT = { has_country_flag = IND_th_posture_set } }
+		complete_effect = {
+			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
+		}
+		remove_effect = {
+			subtract_from_variable = { IND_underground = 3 }
+			clamp_variable = { var = IND_underground min = 0 max = 100 }
+			add_stability = 0.02
+			add_popularity = {
+				ideology = communism
+				popularity = 0.01
+			}
+		}
+	}
+
+	IND_th_sweep_the_halls = {
+		icon = generic_prepare_civil_war
+		cost = 75
+		days_remove = 30
+		fire_only_once = no
+		visible = { has_idea = IND_martial_law_terre_haute }
+		available = { NOT = { has_country_flag = IND_th_posture_set } }
+		complete_effect = {
+			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
+			add_stability = -0.02
+		}
+		remove_effect = {
+			random_list = {
+				80 = {
+					subtract_from_variable = { IND_underground = 5 }
+					clamp_variable = { var = IND_underground min = 0 max = 100 }
+				}
+				20 = {
+					add_to_variable = { IND_underground = 8 }
+					clamp_variable = { var = IND_underground min = 0 max = 100 }
+					add_popularity = {
+						ideology = communism
+						popularity = 0.02
+					}
+					add_stability = -0.02
+				}
+			}
+		}
+	}
+}

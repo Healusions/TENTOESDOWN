@@ -10,11 +10,11 @@
 #
 # ///
 #
-# need to add USA flavor relevant to IND bakst
+# need to add USA AI flavor relevant to IND bakst
 # Population in States needs adj
 # 25 build slots each state start needs fixed
 # Alt factions going to need a lot more research LCW
-#
+# reread all spirits/focuses/flavor etc. loc file.
 #
 #
 #

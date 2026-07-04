@@ -1,0 +1,7 @@
+
+IND_the_terre_haute_question = {
+	icon = GFX_decision_category_generic_martial_law
+	priority = 100
+	allowed = { original_tag = IND }
+	visible = { has_idea = IND_martial_law_terre_haute }
+}

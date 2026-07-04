@@ -1,0 +1,170 @@
+
+focus_tree = {
+	id = indiana_focus_tree
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = IND
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2000 }
+
+	##################################
+	# INDUSTRIAL TRUNK
+	##################################
+
+	focus = {
+		id = IND_the_indianapolis_resolves
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IND_crossroads_of_america
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_indianapolis_resolves }
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			396 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = IND_gary_works
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_the_indianapolis_resolves }
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			1082 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = IND_allison_engineering
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = IND_crossroads_of_america }
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			air_experience = 25
+		}
+	}
+
+	focus = {
+		id = IND_studebaker_retools
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_gary_works }
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	##################################
+	# POLITICAL BRANCH
+	##################################
+
+	focus = {
+		id = IND_the_question_of_1937
+		icon = GFX_goal_generic_demand_territory
+		x = 14
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_the_black_boxes
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_the_question_of_1937 }
+		mutually_exclusive = { focus = IND_the_wire_still_lives focus = IND_an_american_crown }
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_wire_still_lives
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_the_question_of_1937 }
+		mutually_exclusive = { focus = IND_the_black_boxes focus = IND_an_american_crown }
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = IND_an_american_crown
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_question_of_1937 }
+		mutually_exclusive = { focus = IND_the_black_boxes focus = IND_the_wire_still_lives }
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+}

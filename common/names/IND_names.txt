@@ -1,0 +1,25 @@
+
+IND = {
+	male = {
+		names = {
+			Paul Eugene Wendell Harold Virgil Elmer Orville Dale
+			Vernon Earl Homer Floyd Chester Ray Claude Marion
+			Ernest Booth Lew Oliver Thomas Schuyler Benjamin James
+		}
+	}
+	female = {
+		names = {
+			Madge Frances May Gene Juliet Marie Naomi Vivian
+			Hazel Opal Ruth Bernice Doris Thelma Lois Wilma
+		}
+	}
+	surnames = {
+		Miller Wright Bailey Porter Riley Pyle Tarkington Dresser
+		Willkie Hershey Halleck Marshall Hendricks Colfax Fairbanks
+		Wallace Studebaker Ade Bowers Jackson Harrison Shirer
+	}
+	callsigns = {
+		"Hoosier" "Cyclone" "Wabash" "Speedway" "Sycamore"
+		"Torchbearer" "Cardinal" "Old Tippecanoe"
+	}
+}

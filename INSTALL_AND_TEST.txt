@@ -1,4 +1,4 @@
-TENTOESDOWN — FOUR-PATH CONSOLIDATION BUILD
+TENTOESDOWN - MEAT AND BONES TREE REBUILD
 
 INSTALL
 
@@ -10,17 +10,18 @@ INSTALL
 6. Merge folders and replace files when Windows asks.
 7. Start a new 1936 game. Old saves are not compatible.
 
-This is cumulative. Do not install an older streamlined package first.
+The package is cumulative. Do not install an older update first.
 
 
-FIVE-MINUTE SMOKE TEST
+QUICK SCRIPT TEST
 
 1. Start Indiana on 1 January 1936.
 
 Expected:
-- Exactly four starting national spirits.
-- No Indiana decision category before a route is chosen.
+- Four opening national spirits.
+- No Indiana decision category before choosing a government.
 - An optional two-page briefing.
+- Hovering over McNutt in the country screen shows a full biography.
 
 2. Open the console and enter:
 
@@ -30,54 +31,94 @@ event IND_debug.1
 
 Choose the test-resources option. It also sets Political Control to 100.
 
-3. Complete A State in Suspension.
+3. Complete A State in Suspension and choose Keep the Indiana Democrats.
 
 Expected:
-- Exactly four mutually exclusive political focuses appear.
-- The choices are McNutt, Harrison, Pelley, and Hapgood.
-
-4. Choose Keep the Indiana Democrats.
-
-Expected:
+- The other three political choices become unavailable.
 - Exactly one Indiana category appears: The State Convention.
-- Political Control starts at 10.
-- Call the County Chairmen is available immediately.
+- Every decision description lists Political Control and all secondary rewards.
 
-5. Complete The Machine in Daylight without taking the first decision.
-
-Expected:
-- The focus is not blocked by a decision.
-- Two additional operations become visible.
-- Only one operation can run at a time.
-
-6. Continue through McNutt Holds the Statehouse after reaching 70 Political Control.
+4. Complete the democratic focus chain and McNutt Holds the Statehouse.
 
 Expected:
-- McNutt remains leader.
-- Wendell Willkie is available as an advisor after Bring Willkie Home.
+- McNutt remains Governor.
+- Willkie becomes an available advisor after Bring Willkie Home.
 - The campaign category disappears.
-- All four starting crisis spirits remain.
+- The State in Suspension, Wabash Emergency, Federal Embargo, and Consortium Credit spirits are not removed by the convention.
 
-7. Complete The Emergency Outlives the Governor and its three parallel crisis focuses.
+5. Complete The Files Remain Open.
 
 Expected:
-- Close the Vigo File removes The Wabash Emergency.
+- Department, Vigo, and Consortium tracks become available together.
+- They can be taken in any order.
+- The first focus in each track provides information or a modest benefit; it does not settle the file.
+
+6. Complete all three tracks.
+
+Expected:
 - Reissue the Payroll Orders removes A State in Suspension.
-- Open the Chicago Ledger removes Consortium Credit and adds the route-specific outcome.
-- The Federal Embargo remains.
+- Close the Vigo File removes the Wabash Emergency.
+- Open the Chicago Ledger removes Consortium Credit and adds The Disclosed Consortium.
+- Indiana Signs Its Own Orders becomes available only after all three.
 
-8. Complete Indiana Signs Its Own Orders and Contest the Freight Holds.
-
-Expected:
-- The severe Federal Embargo becomes the lighter Federal Standoff.
-- Special Services, Calumet industry, and Purdue content become available only now.
-
-9. Complete Whispers from West Lafayette and The West Lafayette Memorandum.
+7. Complete Contest the Freight Holds.
 
 Expected:
-- The first Purdue event reveals the procurement pattern.
-- The second event offers a secret state program or supervised university program.
-- Either choice removes the Federal Standoff and grants the listed research bonus.
+- The Federal Embargo becomes the Federal Standoff.
+- Four optional Hammond preparations appear.
+- The Hammond Inspection can be taken without them; completing them first grants the benefits shown in their focus effects.
+
+8. Complete all four preparations, move Indiana divisions into Calumet, and complete The Hammond Inspection.
+
+Expected:
+- The confirmation tooltip states that no territory changes hands and four federal brigades are committed.
+- A border conflict begins on the Illinois-Calumet line.
+- The battle cannot resolve in less than thirty days.
+- Indiana victory grants The Federal Line Held and gives the United States The Lost Indiana Operation for 1,460 days.
+- Indiana defeat grants Federal Supervision for 720 days.
+- Either result permits The State on Level Ground.
+
+The Hammond battle can also be tested immediately from event IND_debug.1. This shortcut does not provide Indiana's normal preparation units or bonuses.
+
+9. Complete The State on Level Ground.
+
+Expected:
+- Five compact districts open together: Purdue, industry and rail, Guard and schools, the chosen government, and Special Services/diplomacy.
+- Only the selected government's institutional mini-tree is visible in the center-right district.
+- The visible tree spans roughly one full-screen width rather than several empty screens.
+- The continuous-focus panel sits below the final campaign row and covers no focus.
+- Whispers from West Lafayette was not available before this point.
+
+10. Follow the Purdue district through The Isotope Committee.
+
+Expected:
+- The procurement inquiry reveals nuclear and accelerator work only now.
+- The state program costs 75 Political Power and grants one 50 percent nuclear bonus.
+- The university arrangement costs 25 Political Power, adds 2 percent stability, and grants one 25 percent nuclear bonus.
+- The later focuses build the Van de Graaff tower, cyclotron, physics department, instrument shops, and an isotope committee.
+- Purdue grants research capacity and bonuses, not a free weapon.
+
+11. Sample the industrial and military mini-arcs.
+
+Expected:
+- Boone County, the Monon and Pennsylvania, Ball and Lilly, Studebaker, Allison, Gary, Evansville, and Peru all have concrete economic or logistical rewards.
+- Winter Quarters at Peru leads through Circus Trains to Circus City; it is a short story rather than an isolated joke focus.
+- Culver Military Academy leads through the Black Horse Troop and staff course.
+- Fort Benjamin Harrison leads through a training command and Atterbury; Baer Field and Jefferson Proving Ground feed Army of Our Own.
+
+12. Complete the visible government mini-tree.
+
+Expected:
+- McNutt, Harrison, Pelley, or Hapgood receives a unique eight-focus institutional arc in the same compact location.
+- The other three governments remain hidden.
+- Each route joins two preparatory lanes, presents one mutually exclusive settlement, and ends with consolidation.
+
+13. Follow Special Services into diplomacy.
+
+Expected:
+- The State Police Index, Railroad Listening Posts, and Office of Strategic Inquiry create an intelligence progression.
+- The Meridian Street event presents a real choice about the American Legion headquarters and states both effects.
+- Volunteer missions and faction creation are earned near the end rather than granted at level ground.
 
 Turn Focus.AutoComplete and Decision.Fast off by entering both commands again.
 
@@ -91,33 +132,32 @@ Use a fresh 1936 game.
 3. Complete The Wabash Congress.
 
 Expected:
-- Powers Hapgood becomes leader of the communist side.
-- The democratic opposition receives Indianapolis and approximately 55% of Indiana, normally two of the four states.
-- The Wabash side receives eight militia divisions when every preparation was completed.
-- The communist campaign category disappears when the war starts.
-- The post-takeover crisis branch remains unavailable until the civil war ends.
-- The Wabash Emergency is not silently removed by the change of government.
+- Hapgood becomes leader of the communist side and has a full country-tab biography.
+- The democratic opposition receives Indianapolis and approximately 55 percent of Indiana.
+- The Wabash side receives two base militia divisions plus six prepared formations.
+- The campaign category disappears when the war starts.
+- The Files Remain Open stays unavailable until the civil war ends.
 
 
-OTHER ROUTE CHECK
+HARRISON AND PELLEY CHECKS
 
 Harrison:
-- The Continuity Campaign is the only route category.
-- The first credit operation grants one off-map civilian factory.
-- The Harrison Regency Council takes power after 70 Political Control.
+- The Continuity Campaign is the only Indiana category.
+- Renew the Chicago Advance grants one off-map civilian factory and lists it in the description.
+- The Harrison Regency Council takes power without a civil war and has a country-tab biography.
 
 Pelley:
-- The Silver Entry is the only route category.
-- The takeover occurs through the Statehouse watch, without a civil war.
-- Pelley becomes leader after 70 Political Control.
+- The Silver Entry is the only Indiana category.
+- The takeover occurs through the Statehouse watch without a civil war.
+- Pelley becomes leader and has a country-tab biography.
 
 
-LOG CHECK
+ERROR LOG
 
 After testing, close the game and inspect:
 
 Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log
 
-Search for IND_, IND., IND_focus, IND_decisions, IND_ideas, and TENTOESDOWN.
+Search for IND_, IND., IND_focus, IND_decisions, IND_ideas, IND_federal, and TENTOESDOWN.
 
-The previous build produced character recruitment errors because route leaders were recruited inside events. This package recruits all possible Indiana leaders in country history and only promotes them in events.
+The launcher's red error count can include unrelated Workshop descriptor warnings. Judge this build by new entries naming IND or TENTOESDOWN and by their timestamps.

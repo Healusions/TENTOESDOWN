@@ -52,6 +52,7 @@ country_event = {
 		custom_effect_tooltip = IND_democratic_20_a_tt
 		hidden_effect = {
 			set_country_flag = IND_political_takeover_complete
+			set_country_leader_description = { desc = "IND_paul_v_mcnutt_leader_desc" }
 			set_politics = {
 				ruling_party = democratic
 				elections_allowed = yes

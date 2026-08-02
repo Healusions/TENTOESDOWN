@@ -1,97 +1,128 @@
-# TENTOESDOWN — Design and Writing Guide
+# TENTOESDOWN - Design and Writing Guide
 
 ## Campaign premise
 
-Indiana begins on 1 January 1936 as a functioning government without a settled constitutional position. Paul V. McNutt used the reorganized executive departments to preserve state authority, and Franklin Roosevelt's attempt to federalize the Indiana National Guard during the Terre Haute occupation produced the break. Indianapolis requested clarification and never acknowledged the final order.
+Indiana begins on 1 January 1936 as a functioning state government whose break with Washington has never been settled. Paul V. McNutt's reorganized departments preserved day-to-day authority, but the disputed federalization of the Indiana National Guard during the Terre Haute occupation left Indianapolis issuing orders Washington does not recognize.
 
-The opener asks one question: who controls Indianapolis when McNutt's term ends?
+The opening question is narrow: who controls Indianapolis when McNutt's term ends?
 
-## Four routes
+## Four governments
 
 After one common focus, the player makes one explicit and permanent commitment:
 
-1. **Indiana Democrats** — McNutt exposes enough of the Machine to win a real state convention. Wendell Willkie is a useful, independent ally and advisor, not a second ruler.
-2. **Harrison Crown** — The 1816 Society converts private credit into a Guard-backed regency built around the Harrison name.
-3. **Silver State** — William Dudley Pelley uses copied political files, compromised county chairmen, and a replaced Statehouse detail to seize power without a civil war.
-4. **Wabash Revolt** — Powers Hapgood rebuilds the Terre Haute committees, arms mine-road caches, and raises Calumet militia before a civil war.
+1. **Indiana Democrats** - McNutt exposes enough of the Machine to win a state convention. Wendell Willkie chairs an economic commission outside Frank McHale's party organization. He is an independent ally and advisor, not a second governor.
+2. **Harrison Regency** - the invented 1816 Society converts private credit, legislative procedure, and Guard custody into a regency built around the Harrison name.
+3. **Silver State** - William Dudley Pelley exploits copied political obligations, compromised county chairmen, and a replaced Statehouse detail to take office from inside.
+4. **Wabash Congress** - Powers Hapgood rebuilds the Terre Haute committees, prepares armed formations, and challenges Indianapolis in a civil war.
 
-The routes must feel different in method, not merely color. McNutt wins a convention. Harrison is finance, legal form, and military custody. Pelley is infiltration. Hapgood is public organization and armed revolt.
+Their methods must stay distinct. McNutt wins a convention. Harrison constructs legal continuity. Pelley infiltrates. Hapgood organizes and fights.
 
 ## Interface budget
 
-- The player sees no route category before choosing a path.
-- After the choice, exactly one major Indiana category is visible.
-- Every route has five one-time operations. Focuses reveal more operations; individual decisions do not gate the next focus.
-- A single Political Control value runs from 0 to 100. The takeover focus requires 70.
-- Only one operation can run at a time.
-- The category disappears when the takeover begins.
-- The player should not need a guide event, chapter list, or second screen to understand the opener.
+- No Indiana decision category appears before the political choice.
+- Exactly one political category is visible afterward.
+- Each government has five one-time operations and a single Political Control value.
+- Focuses broaden the available operations; individual decisions never serve as mandatory keys for the next focus.
+- Only one operation may run at a time.
+- The category disappears when the seizure or convention begins.
+- Later chapters may use one temporary category when it materially clarifies a conflict. Two visible Indiana categories is the absolute ceiling.
+- There is no route ledger, chapter list, or path-guide event.
 
-## The takeover is not the solution
+The focus tree follows the same budget. The succession sits on one centered crown, the inherited files form three short lanes, and Hammond reconverges them into one climax. After level ground, the tree divides into five adjacent districts rather than scattering isolated branches across the canvas. Government-specific focuses occupy the same eight-focus footprint and only the chosen government is drawn. The visible tree is twenty columns wide; continuous focuses sit below the last campaign row.
 
-Changing leaders does not remove the four starting crises:
+## Pacing and calendar
 
-- A State in Suspension
-- The Wabash Emergency
-- The Federal Embargo
-- Consortium Credit
+The campaign should respect the time required to move people, money, and institutions.
 
-After the takeover, the player must close the Vigo occupation, reissue departmental commissions, and open the Chicago ledger. Only then can Indiana reduce the Federal Embargo to a Federal Standoff.
+- **Spring-summer 1936:** the succession campaign.
+- **Late 1936 through 1937:** new departmental commissions, the Terre Haute settlement, and the Chicago credit inquiry. These can be pursued in any order.
+- **Late 1937 into 1938:** freight resistance, optional military and political preparations, and the Hammond inspection.
+- **1938-40:** compact industrial, military, intelligence, diplomatic, scientific, and government mini-arcs. Their endpoints prepare Indiana for the global campaign without pretending it reached great-power strength in 1936.
 
-The Consortium outcome is route-specific:
+Focus length is part of the story. A player who follows every Hammond preparation arrives later with a much safer position. A player who rushes the confrontation accepts the risk.
 
-- McNutt discloses its owners.
-- The Harrison regency charters it.
-- Pelley seizes its files and notes.
-- Hapgood nationalizes its credit machinery.
+## Focus construction
+
+A focus is not automatically a lever that changes the world. Most intermediate focuses should do one or two of the following:
+
+- reveal a fact;
+- name an institution or participant;
+- prepare equipment, personnel, legal authority, or public opinion;
+- grant a modest and contextually justified bonus;
+- alter the odds of a later commitment.
+
+Major changes belong at earned endpoints: issuing the new departmental commissions, lifting martial law in Vigo County, deciding the Chicago notes, beginning the Hammond inspection, or choosing custody of the Purdue program.
+
+Conventional industry and military branches may grant factories, equipment, experience, and research bonuses. Even there, the description must say who is doing the work and why that reward follows.
+
+Later branches are built as small stories. A two- or three-focus lane should introduce an institution, make one practical investment or argument, and end with a recognizable capability. Shared improvements may be simple, but they still belong to Indiana: Boone County cooperatives, Monon schedules, Culver classrooms, Fort Harrison records, Peru trainmasters, Purdue shops, or Indianapolis offices.
+
+## The government inherits the files
+
+A new leader does not repair Indiana by proclamation. Every government receives the same three domestic files:
+
+- commissions for the eight executive departments;
+- civil restoration in Terre Haute and Vigo County;
+- the ownership and terms of the Chicago payroll note.
+
+The player chooses the order. Each file has investigative or preparatory work before its settlement. The Chicago result reflects the government in power: disclosure, charter, seizure, or nationalization.
+
+Only after those matters are answered can Indiana consolidate the freight dispute at Hammond.
+
+## The federal line
+
+Indiana does not invade the United States. It consolidates disputed freight papers at Hammond, makes a federal enforcement column cross first, and fights a limited border conflict in which no state changes hands.
+
+Four optional preparations improve Indiana's position:
+
+- survey and fortify the Calumet approaches;
+- recall a State Line regiment;
+- disperse rifles and artillery stores through the Monon yards;
+- write the orders so Washington clearly initiates the violence.
+
+The battle lasts at least thirty days. Indiana can continue after victory, defeat, or an engine-cancelled compromise. A federal defeat applies a four-year national humiliation to the United States; an Indiana defeat imposes two years of federal supervision.
 
 ## Purdue rule
 
-Purdue is leverage, not a magic weapon. The 1935 decision to construct a Van de Graaff accelerator and cyclotron, Karl Lark-Horovitz's department, and Purdue's instrument shops provide the historical foundation. Indiana may protect and accelerate the institution. It does not receive a bomb or skip the industrial requirements of nuclear work.
+Purdue is leverage, not a magic weapon. The historical accelerator program, Karl Lark-Horovitz's department, and Purdue's instrument shops provide the foundation. Indiana may protect or supervise this work, but it does not receive a bomb or bypass nuclear industry.
 
-No Purdue whisper, focus, event, or bonus appears until:
-
-1. The political takeover is complete.
-2. A communist civil war, if any, has ended.
-3. The internal crises are settled.
-4. The worst freight holds have been broken.
+No Purdue whisper, focus, event, or bonus appears until the political struggle, domestic files, and federal confrontation are complete. The first nuclear material is therefore a post-emergency 1938 story.
 
 ## Writing register
 
-The prose should sit between a state archive, a newspaper morgue, a political novel, and an intelligence file. It may be stylish, but it must remain concrete.
+The prose should sit between a state archive, a newspaper morgue, a political novel, and an intelligence file. Style is welcome; vagueness is not.
 
-Every major event establishes:
+Every important scene should establish:
 
-1. A real room, street, town, institution, publication, or office.
-2. A named person or organization with an immediate objective.
-3. The fact that changed.
-4. The action being taken.
-5. The office, flag, spirit, unit, or cost that remembers it.
+1. a real room, street, town, institution, publication, or office;
+2. a named person or organization with an immediate objective;
+3. the fact that changed;
+4. the action being taken;
+5. the office, spirit, unit, cost, or flag that remembers it.
 
 ### House rules
 
 - Description first, atmosphere second.
-- No narrative text refers to the player, modding, implementation, or an external timeline.
-- Delete empty portent and summary lines.
+- Narrative text never refers to the player, modding, routes, chapters, implementation, or a focus tree.
+- Delete empty portent, recap paragraphs, and lore that has no bearing on the decision in front of the reader.
 - Do not repeat a focus description in its event.
 - Options are actions, not reactions.
-- Tooltips state mechanical effects directly.
-- Political extremism is not sanitized or treated as theatrical evil.
-- Proper nouns make this Indiana: Terre Haute, North Eighth Street, the Columbia Club, Gary, the Statehouse, Purdue, and West Lafayette.
+- Tooltips state all important mechanical effects directly.
+- Political extremism is neither sanitized nor rendered as theatrical fantasy.
+- Proper nouns do the work: Terre Haute, North Eighth Street, the Columbia Club, Gary, Hammond, the Statehouse, Purdue, and West Lafayette.
 
 ## War rule
 
-War is a payoff, not a substitute for politics. The Wabash route alone causes the opening civil war because it builds organizations that cannot capture the Statehouse quietly.
-
-The democratic opposition must control Indianapolis and enough territory to form a real front. The communist player receives two base militia units; optional preparation can raise that total to eight. The war should be fast when prepared and dangerous when rushed.
+The Wabash route alone causes the opening civil war because it creates organizations that cannot capture the Statehouse quietly. The democratic opposition holds Indianapolis and roughly 55 percent of Indiana. The communist player receives two base militia divisions and up to six prepared formations. Preparation should make the war short; rushing it should remain dangerous.
 
 ## Definition of success
 
-After the opener, the player should be able to answer:
+By the time Indiana reaches level ground, the player should understand:
 
-- Who took power?
-- Which operations made it possible?
-- Why did the route use a convention, regency, seizure, or civil war?
-- Which crises survived the takeover?
-- What did the new government do with the Consortium?
-- Why did Purdue appear only after Indiana could govern itself?
+- who took power and by what method;
+- which organizations made that possible;
+- what happened in Terre Haute;
+- who owned the emergency credit;
+- why the Hammond fight occurred and how it could have been prepared;
+- why the broad national branches and Purdue appear only after ordinary government is possible.
+- how the institutions chosen after level ground fit together into an industrial base, an army, an intelligence service, and a durable government.

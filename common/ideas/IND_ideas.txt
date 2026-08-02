@@ -209,5 +209,490 @@ ideas = {
 				encryption = 1
 			}
 		}
+
+		##################################
+		# THE FEDERAL LINE
+		##################################
+
+		IND_calumet_fieldworks = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_defence_factor = 0.15
+				max_dig_in = 5
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		IND_washington_moves_first = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+
+		IND_federal_line_victory = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.15
+				army_org_factor = 0.05
+				political_power_factor = 0.10
+			}
+		}
+
+		IND_federal_supervision = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_factor = -0.20
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				industrial_capacity_factory = -0.10
+			}
+		}
+
+		IND_federal_humiliation = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				consumer_goods_factor = 0.12
+				political_power_factor = -0.20
+				stability_factor = -0.15
+				war_support_factor = -0.20
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.10
+			}
+		}
+
+		IND_indiana_on_level_ground = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.03
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		##################################
+		# THE OPENED GOVERNMENT
+		##################################
+
+		IND_hoosier_general_staff = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				land_doctrine_cost_factor = -0.10
+				command_power_gain_mult = 0.15
+				army_org_factor = 0.03
+			}
+		}
+
+		IND_open_consulates = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				trade_opinion_factor = 0.30
+				political_power_factor = 0.05
+			}
+		}
+
+		IND_mcnutt_reform_cabinet = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				political_power_factor = 0.10
+				research_speed_factor = 0.02
+				democratic_drift = 0.02
+			}
+		}
+
+		IND_regency_charter = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				political_power_factor = 0.10
+				stability_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		IND_silver_county_system = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				political_power_factor = 0.15
+				recruitable_population_factor = 0.05
+				fascism_drift = 0.03
+				stability_factor = -0.03
+			}
+		}
+
+		IND_wabash_local_councils = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+				recruitable_population_factor = 0.05
+				communism_drift = 0.03
+				political_power_factor = -0.05
+			}
+		}
+
+		##################################
+		# THE OPENED STATE
+		##################################
+
+		IND_state_works_program = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.08
+				consumer_goods_factor = 0.02
+			}
+		}
+
+		IND_purdue_instrument_network = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				research_speed_factor = 0.05
+				consumer_goods_factor = 0.02
+			}
+		}
+
+		IND_boone_county_electrification = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				consumer_goods_factor = -0.01
+			}
+		}
+
+		IND_state_purchasing_board = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+
+		IND_circus_rail_men = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_speed_factor = 0.03
+				supply_consumption_factor = -0.03
+				production_speed_rail_way_factor = 0.10
+			}
+		}
+
+		IND_integrated_war_industry = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.12
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
+
+		IND_38th_cyclone_tradition = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_org_factor = 0.03
+				mobilization_speed = 0.10
+			}
+		}
+
+		IND_state_training_command = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				training_time_army_factor = -0.10
+				recruitable_population_factor = 0.03
+			}
+		}
+
+		IND_culver_officer_corps = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				land_doctrine_cost_factor = -0.08
+				command_power_gain_mult = 0.10
+				max_command_power_mult = 0.10
+			}
+		}
+
+		IND_army_of_our_own = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_org_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				max_command_power_mult = 0.15
+			}
+		}
+
+		IND_railroad_listening_network = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				decryption = 1
+				enemy_operative_capture_chance_factor = 0.05
+			}
+		}
+
+		IND_strategic_inquiry = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				decryption = 1
+				encryption = 1
+				intel_network_gain = 0.10
+				operative_slot = 1
+			}
+		}
+
+		IND_great_lakes_trade = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				trade_opinion_factor = 0.30
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		IND_unrecognized_embassies = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				political_power_factor = 0.10
+				trade_opinion_factor = 0.20
+			}
+		}
+
+		IND_legion_indiana_compact = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				war_support_factor = 0.10
+				recruitable_population_factor = 0.03
+				training_time_army_factor = -0.05
+			}
+		}
+
+		IND_legion_neutral_headquarters = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+				trade_opinion_factor = 0.10
+			}
+		}
+
+		##################################
+		# GOVERNMENT SETTLEMENTS
+		##################################
+
+		IND_machine_under_law_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = 0.05
+				democratic_drift = 0.02
+			}
+		}
+
+		IND_commission_government_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				research_speed_factor = 0.04
+				industrial_capacity_factory = 0.08
+				political_power_factor = 0.05
+			}
+		}
+
+		IND_columbia_club_court = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				production_speed_buildings_factor = 0.06
+				political_power_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		IND_crown_in_trust_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.10
+			}
+		}
+
+		IND_harrison_convention_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				war_support_factor = 0.10
+				political_power_factor = 0.10
+				neutrality_drift = 0.03
+			}
+		}
+
+		IND_silver_county_commanders = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				recruitable_population_factor = 0.05
+				war_support_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		IND_burned_index_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
+		IND_rule_by_file_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				political_power_factor = 0.20
+				stability_factor = -0.05
+				decryption = 1
+				enemy_operative_capture_chance_factor = 0.10
+			}
+		}
+
+		IND_mine_safety_committees_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		IND_state_plan_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.10
+				consumer_goods_factor = 0.03
+				political_power_factor = -0.05
+			}
+		}
+
+		IND_sovereign_locals_idea = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				stability_factor = 0.10
+				recruitable_population_factor = 0.05
+				political_power_factor = -0.05
+				communism_drift = 0.03
+			}
+		}
 	}
 }

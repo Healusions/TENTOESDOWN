@@ -1,97 +1,29 @@
-
 add_namespace = IND_opening
-
-##################################
-# HIDDEN CAMPAIGN INITIALIZATION
-##################################
 
 country_event = {
 	id = IND_opening.1
 	hidden = yes
 	is_triggered_only = yes
-
 	immediate = {
+		set_country_leader_description = { desc = "IND_paul_v_mcnutt_leader_desc" }
 		if = {
-			limit = {
-				NOT = { has_country_flag = IND_campaign_initialized }
-			}
-
+			limit = { NOT = { has_country_flag = IND_campaign_initialized } }
 			set_country_flag = IND_campaign_initialized
-
-			# Core campaign variables. Keep all starting values in this one block.
-			set_variable = { var = IND_federal_pressure value = 20 }
-			set_variable = { var = IND_machine_control value = 50 }
-			set_variable = { var = IND_guard_cohesion value = 50 }
-			set_variable = { var = IND_consortium_exposure value = 5 }
-			set_variable = { var = IND_underground value = 10 }
-
-			# Temporary development safeguard. A later federal crisis can shorten this truce.
-			set_truce = {
-				target = USA
-				days = 730
-			}
-			USA = {
-				set_truce = {
-					target = ROOT
-					days = 730
-				}
-			}
+			set_country_flag = IND_mchale_advisor_unlocked
+			set_truce = { target = USA days = 730 }
+			USA = { set_truce = { target = ROOT days = 730 } }
 		}
 	}
 }
-
-##################################
-# THE NEW YEAR'S ADDRESS
-##################################
 
 country_event = {
 	id = IND_opening.2
 	title = IND_opening.2.t
 	desc = IND_opening.2.d
-	picture = GFX_report_event_journalists_speech
-
+	picture = GFX_report_event_generic_sign_treaty
 	is_triggered_only = yes
 	fire_only_once = yes
-
 	option = {
 		name = IND_opening.2.a
-		ai_chance = { factor = 45 }
-
-		set_country_flag = IND_posture_legalist
-		subtract_from_variable = { var = IND_federal_pressure value = 5 }
-		subtract_from_variable = { var = IND_machine_control value = 5 }
-		add_to_variable = { var = IND_guard_cohesion value = 5 }
-		clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-		clamp_variable = { var = IND_machine_control min = 0 max = 100 }
-		clamp_variable = { var = IND_guard_cohesion min = 0 max = 100 }
-		add_stability = 0.01
-	}
-
-	option = {
-		name = IND_opening.2.b
-		ai_chance = { factor = 45 }
-
-		set_country_flag = IND_posture_machine
-		add_to_variable = { var = IND_federal_pressure value = 5 }
-		add_to_variable = { var = IND_machine_control value = 10 }
-		add_to_variable = { var = IND_consortium_exposure value = 2 }
-		clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-		clamp_variable = { var = IND_machine_control min = 0 max = 100 }
-		clamp_variable = { var = IND_consortium_exposure min = 0 max = 100 }
-		add_political_power = 50
-	}
-
-	option = {
-		name = IND_opening.2.c
-		ai_chance = { factor = 10 }
-
-		set_country_flag = IND_posture_mobilization
-		add_to_variable = { var = IND_federal_pressure value = 10 }
-		add_to_variable = { var = IND_guard_cohesion value = 10 }
-		clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-		clamp_variable = { var = IND_guard_cohesion min = 0 max = 100 }
-		add_war_support = 0.03
-		army_experience = 10
-		add_political_power = -25
 	}
 }

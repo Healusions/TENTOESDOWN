@@ -54,6 +54,7 @@ country_event = {
 			set_country_flag = IND_wabash_civil_war_started
 			retire_character = IND_paul_v_mcnutt
 			promote_character = IND_powers_hapgood
+			set_country_leader_description = { desc = "IND_powers_hapgood_leader_desc" }
 			set_politics = {
 				ruling_party = communism
 				elections_allowed = no

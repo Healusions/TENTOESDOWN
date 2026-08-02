@@ -1,4 +1,6 @@
-TENTOESDOWN FOUR-PATH CONSOLIDATION — REPLACED FILES
+TENTOESDOWN MEAT AND BONES TREE REBUILD - CUMULATIVE PACKAGE
+
+The ZIP contains the complete TENTOESDOWN mod folder. It carries forward the current map, state, portrait, flag, country, names, descriptor, and order-of-battle files while replacing the gameplay and documentation listed below.
 
 GAMEPLAY
 
@@ -13,6 +15,9 @@ events/IND_1937_events.txt
 events/IND_black_boxes_events.txt
 events/IND_debug_events.txt
 events/IND_democratic_events.txt
+events/IND_federal_events.txt
+events/IND_expansion_events.txt
+events/IND_government_events.txt
 events/IND_guide_events.txt
 events/IND_hidden_governments_events.txt
 events/IND_intro_events.txt
@@ -20,6 +25,7 @@ events/IND_opening_events.txt
 events/IND_purdue_events.txt
 events/IND_terre_haute_events.txt
 history/countries/IND - Indiana.txt
+interface/IND_eventpictures.gfx
 localisation/english/IND_l_english.yml
 localisation/english/IND_black_boxes_l_english.yml
 localisation/english/IND_debug_l_english.yml
@@ -41,6 +47,4 @@ RESEARCH_LEDGER.md
 ROADMAP.md
 VALIDATION_REPORT.txt
 
-All map, state, flag, portrait, country, name, descriptor, and order-of-battle files are carried forward unchanged from the current installed mod.
-
-The ZIP contains the complete cumulative TENTOESDOWN folder. It does not contain Git metadata or editor settings.
+The ZIP excludes Git metadata, editor settings, and the workspace .gitignore.

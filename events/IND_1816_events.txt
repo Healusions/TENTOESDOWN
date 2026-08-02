@@ -53,6 +53,7 @@ country_event = {
 		hidden_effect = {
 			retire_character = IND_paul_v_mcnutt
 			promote_character = IND_harrison_continuity_council
+			set_country_leader_description = { desc = "IND_harrison_continuity_council_leader_desc" }
 			set_country_flag = IND_political_takeover_complete
 			set_politics = {
 				ruling_party = neutrality

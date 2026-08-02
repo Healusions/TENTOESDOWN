@@ -26,10 +26,6 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = IND_purdue_state_program
 			add_political_power = -75
-			if = {
-				limit = { has_idea = IND_federal_standoff }
-				remove_ideas = IND_federal_standoff
-			}
 			add_ideas = IND_purdue_state_program
 			add_tech_bonus = {
 				name = IND_purdue_accelerator_bonus
@@ -46,10 +42,6 @@ country_event = {
 			set_country_flag = IND_purdue_open_program
 			add_political_power = -25
 			add_stability = 0.02
-			if = {
-				limit = { has_idea = IND_federal_standoff }
-				remove_ideas = IND_federal_standoff
-			}
 			add_ideas = IND_west_lafayette_understanding
 			add_tech_bonus = {
 				name = IND_purdue_accelerator_bonus

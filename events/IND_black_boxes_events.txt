@@ -53,6 +53,7 @@ country_event = {
 		hidden_effect = {
 			retire_character = IND_paul_v_mcnutt
 			promote_character = IND_william_dudley_pelley
+			set_country_leader_description = { desc = "IND_william_dudley_pelley_leader_desc" }
 			set_country_flag = IND_political_takeover_complete
 			set_politics = {
 				ruling_party = fascism

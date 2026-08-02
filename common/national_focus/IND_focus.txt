@@ -1,7 +1,5 @@
-
 focus_tree = {
 	id = indiana_focus_tree
-
 	country = {
 		factor = 0
 		modifier = {
@@ -9,12 +7,12 @@ focus_tree = {
 			tag = IND
 		}
 	}
-
 	default = no
-	continuous_focus_position = { x = 50 y = 2000 }
+	continuous_focus_position = { x = 650 y = 3600 }
+	initial_show_position = { x = 8 y = 0 }
 
 	##################################
-	# CHAPTER I — A STATE IN SUSPENSION
+	# COMMON OPENING
 	##################################
 
 	focus = {
@@ -23,138 +21,2139 @@ focus_tree = {
 		x = 8
 		y = 0
 		cost = 5
-		available_if_capitulated = yes
-
 		completion_reward = {
-			set_country_flag = IND_opening_focus_started
+			add_political_power = 50
+			country_event = { id = IND_opening.2 hours = 6 }
+		}
+	}
+
+	##################################
+	# FOUR COMMITMENTS
+	##################################
+
+	focus = {
+		id = IND_keep_the_indiana_democrats
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_a_state_in_suspension }
+		mutually_exclusive = {
+			focus = IND_the_harrison_offer
+			focus = IND_the_silver_entry
+			focus = IND_the_wabash_answer
+		}
+		x = 2
+		y = 1
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_keep_the_indiana_democrats_tt
 			add_political_power = 25
+			add_popularity = { ideology = democratic popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_route_democratic
+				set_variable = { var = IND_political_control value = 10 }
+				country_event = { id = IND_democratic.1 hours = 6 }
+			}
 		}
+		ai_will_do = { factor = 5 }
 	}
 
 	focus = {
-		id = IND_the_order_remains_in_draft
-		icon = GFX_goal_generic_demand_territory
+		id = IND_the_harrison_offer
+		icon = GFX_goal_generic_neutrality_focus
 		prerequisite = { focus = IND_a_state_in_suspension }
-		x = 3
+		mutually_exclusive = {
+			focus = IND_keep_the_indiana_democrats
+			focus = IND_the_silver_entry
+			focus = IND_the_wabash_answer
+		}
+		x = 6
 		y = 1
 		cost = 5
-		available_if_capitulated = yes
-
 		completion_reward = {
-			subtract_from_variable = { var = IND_federal_pressure value = 8 }
-			subtract_from_variable = { var = IND_machine_control value = 3 }
-			add_to_variable = { var = IND_guard_cohesion value = 5 }
-			clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-			clamp_variable = { var = IND_machine_control min = 0 max = 100 }
-			clamp_variable = { var = IND_guard_cohesion min = 0 max = 100 }
-			add_political_power = 20
+			custom_effect_tooltip = IND_the_harrison_offer_tt
+			add_political_power = 25
+			add_popularity = { ideology = neutrality popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_route_crown
+				set_variable = { var = IND_political_control value = 10 }
+				country_event = { id = IND_1816.1 hours = 6 }
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+
+	focus = {
+		id = IND_the_silver_entry
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_a_state_in_suspension }
+		mutually_exclusive = {
+			focus = IND_keep_the_indiana_democrats
+			focus = IND_the_harrison_offer
+			focus = IND_the_wabash_answer
+		}
+		x = 10
+		y = 1
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_silver_entry_tt
+			add_political_power = 25
+			add_popularity = { ideology = fascism popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_route_pelley
+				set_variable = { var = IND_political_control value = 10 }
+				country_event = { id = IND_black_boxes.1 hours = 6 }
+			}
+		}
+		ai_will_do = { factor = 2 }
+	}
+
+	focus = {
+		id = IND_the_wabash_answer
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_a_state_in_suspension }
+		mutually_exclusive = {
+			focus = IND_keep_the_indiana_democrats
+			focus = IND_the_harrison_offer
+			focus = IND_the_silver_entry
+		}
+		x = 14
+		y = 1
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_wabash_answer_tt
+			add_political_power = 25
+			add_popularity = { ideology = communism popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_route_communist
+				set_variable = { var = IND_political_control value = 10 }
+				country_event = { id = IND_terre_haute.1 hours = 6 }
+			}
+		}
+		ai_will_do = { factor = 3 }
+	}
+
+	##################################
+	# McNUTT / INDIANA DEMOCRATS
+	##################################
+
+	focus = {
+		id = IND_the_machine_in_daylight
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_keep_the_indiana_democrats }
+		x = 2
+		y = 2
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_machine_in_daylight_tt
+			add_political_power = 25
+			add_stability = 0.01
+			hidden_effect = {
+				set_country_flag = IND_democratic_stage_one
+				country_event = { id = IND_democratic.2 hours = 6 }
+			}
 		}
 	}
 
 	focus = {
-		id = IND_keep_the_payroll_moving
+		id = IND_bring_willkie_home
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_machine_in_daylight }
+		x = 2
+		y = 3
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_bring_willkie_home_tt
+			add_political_power = 25
+			add_tech_bonus = {
+				name = IND_willkie_opening_bonus
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+			hidden_effect = {
+				set_country_flag = IND_democratic_stage_two
+				set_country_flag = IND_willkie_advisor_unlocked
+				country_event = { id = IND_democratic.3 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_1936_state_convention
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = IND_a_state_in_suspension }
-		x = 8
-		y = 1
+		prerequisite = { focus = IND_bring_willkie_home }
+		x = 2
+		y = 4
 		cost = 5
-		available_if_capitulated = yes
-
 		completion_reward = {
-			add_to_variable = { var = IND_machine_control value = 8 }
-			add_to_variable = { var = IND_consortium_exposure value = 5 }
-			clamp_variable = { var = IND_machine_control min = 0 max = 100 }
-			clamp_variable = { var = IND_consortium_exposure min = 0 max = 100 }
-			add_political_power = 75
-			add_stability = -0.01
+			custom_effect_tooltip = IND_the_1936_state_convention_tt
+			add_political_power = 25
+			add_stability = 0.01
+			hidden_effect = {
+				set_country_flag = IND_democratic_stage_three
+				country_event = { id = IND_democratic.4 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_mcnutt_holds_the_statehouse
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_the_1936_state_convention }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IND_political_control_requirement_tt
+				check_variable = { var = IND_political_control value = 70 compare = greater_than_or_equals }
+			}
+		}
+		x = 2
+		y = 5
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_mcnutt_holds_the_statehouse_tt
+			hidden_effect = {
+				set_country_flag = IND_route_final_started
+				country_event = { id = IND_democratic.20 hours = 6 }
+			}
+		}
+	}
+
+	##################################
+	# HARRISON / 1816 SOCIETY
+	##################################
+
+	focus = {
+		id = IND_accounts_behind_the_flag
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_harrison_offer }
+		x = 6
+		y = 2
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_accounts_behind_the_flag_tt
+			add_political_power = 25
+			hidden_effect = {
+				set_country_flag = IND_crown_stage_one
+				country_event = { id = IND_1816.2 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_harrison_name
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_accounts_behind_the_flag }
+		x = 6
+		y = 3
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_harrison_name_tt
+			add_stability = 0.01
+			add_popularity = { ideology = neutrality popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_crown_stage_two
+				country_event = { id = IND_1816.3 hours = 6 }
+			}
 		}
 	}
 
 	focus = {
 		id = IND_orders_to_the_adjutant_general
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = IND_a_state_in_suspension }
-		x = 13
-		y = 1
+		prerequisite = { focus = IND_the_harrison_name }
+		x = 6
+		y = 4
 		cost = 5
-		available_if_capitulated = yes
-
 		completion_reward = {
-			add_to_variable = { var = IND_federal_pressure value = 10 }
-			add_to_variable = { var = IND_guard_cohesion value = 10 }
-			clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-			clamp_variable = { var = IND_guard_cohesion min = 0 max = 100 }
-			army_experience = 15
-			add_war_support = 0.03
+			custom_effect_tooltip = IND_orders_to_the_adjutant_general_tt
+			army_experience = 10
+			add_command_power = 10
+			hidden_effect = {
+				set_country_flag = IND_crown_stage_three
+				country_event = { id = IND_1816.4 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_an_american_crown
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_orders_to_the_adjutant_general }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IND_political_control_requirement_tt
+				check_variable = { var = IND_political_control value = 70 compare = greater_than_or_equals }
+			}
+		}
+		x = 6
+		y = 5
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_an_american_crown_tt
+			hidden_effect = {
+				set_country_flag = IND_route_final_started
+				country_event = { id = IND_1816.20 hours = 6 }
+			}
+		}
+	}
+
+	##################################
+	# PELLEY / SILVER LEGION
+	##################################
+
+	focus = {
+		id = IND_a_letter_from_asheville
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_silver_entry }
+		x = 10
+		y = 2
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_a_letter_from_asheville_tt
+			add_political_power = 25
+			add_popularity = { ideology = fascism popularity = 0.01 }
+			hidden_effect = {
+				set_country_flag = IND_pelley_stage_one
+				country_event = { id = IND_black_boxes.2 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_a_sermon_for_indianapolis
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_a_letter_from_asheville }
+		x = 10
+		y = 3
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_a_sermon_for_indianapolis_tt
+			add_popularity = { ideology = fascism popularity = 0.02 }
+			add_stability = -0.01
+			hidden_effect = {
+				set_country_flag = IND_pelley_stage_two
+				country_event = { id = IND_black_boxes.3 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_night_detail
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_a_sermon_for_indianapolis }
+		x = 10
+		y = 4
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_night_detail_tt
+			army_experience = 10
+			add_political_power = 25
+			hidden_effect = {
+				set_country_flag = IND_pelley_stage_three
+				country_event = { id = IND_black_boxes.4 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_silver_state
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_the_night_detail }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IND_political_control_requirement_tt
+				check_variable = { var = IND_political_control value = 70 compare = greater_than_or_equals }
+			}
+		}
+		x = 10
+		y = 5
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_silver_state_tt
+			hidden_effect = {
+				set_country_flag = IND_route_final_started
+				country_event = { id = IND_black_boxes.20 hours = 6 }
+			}
+		}
+	}
+
+	##################################
+	# HAPGOOD / WABASH REVOLT
+	##################################
+
+	focus = {
+		id = IND_the_house_on_north_eighth
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_the_wabash_answer }
+		x = 14
+		y = 2
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_house_on_north_eighth_tt
+			add_stability = 0.01
+			add_popularity = { ideology = communism popularity = 0.02 }
+			hidden_effect = {
+				set_country_flag = IND_communist_stage_one
+				country_event = { id = IND_terre_haute.2 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_mine_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_house_on_north_eighth }
+		x = 14
+		y = 3
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_mine_roads_tt
+			army_experience = 10
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 200
+				producer = IND
+			}
+			hidden_effect = {
+				set_country_flag = IND_communist_stage_two
+				country_event = { id = IND_terre_haute.3 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_calumet_vote
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_mine_roads }
+		x = 14
+		y = 4
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_calumet_vote_tt
+			add_popularity = { ideology = communism popularity = 0.02 }
+			add_war_support = 0.01
+			hidden_effect = {
+				set_country_flag = IND_communist_stage_three
+				country_event = { id = IND_terre_haute.4 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_wabash_congress
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_the_calumet_vote }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = IND_political_control_requirement_tt
+				check_variable = { var = IND_political_control value = 70 compare = greater_than_or_equals }
+			}
+		}
+		x = 14
+		y = 5
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_wabash_congress_tt
+			hidden_effect = {
+				set_country_flag = IND_route_final_started
+				country_event = { id = IND_terre_haute.20 hours = 6 }
+			}
+		}
+	}
+
+	##################################
+	# THE OPEN FILES
+	##################################
+
+	focus = {
+		id = IND_the_emergency_outlives_the_governor
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = {
+			focus = IND_mcnutt_holds_the_statehouse
+			focus = IND_an_american_crown
+			focus = IND_the_silver_state
+			focus = IND_the_wabash_congress
+		}
+		available = {
+			OR = {
+				has_country_flag = IND_political_takeover_complete
+				AND = {
+					has_country_flag = IND_wabash_civil_war_started
+					has_civil_war = no
+				}
+			}
+		}
+		x = 8
+		y = 6
+		cost = 5
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = IND_political_takeover_complete
+				country_event = { id = IND_1937.1 hours = 6 }
+			}
+		}
+	}
+
+	# Departmental authority
+	focus = {
+		id = IND_inventory_the_eight_departments
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_the_emergency_outlives_the_governor }
+		x = 4
+		y = 7
+		cost = 7
+		completion_reward = {
+			add_political_power = 25
+			country_event = { id = IND_1937.2 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_reissue_the_payroll_orders
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_inventory_the_eight_departments }
+		x = 4
+		y = 8
+		cost = 7
+		completion_reward = {
+			if = { limit = { has_idea = IND_state_in_suspension } remove_ideas = IND_state_in_suspension }
+			set_country_flag = IND_state_suspension_resolved
+			add_political_power = 50
+			add_stability = 0.02
+			country_event = { id = IND_1937.3 hours = 6 }
+		}
+	}
+
+	# Vigo County
+	focus = {
+		id = IND_send_the_civil_commission
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_emergency_outlives_the_governor }
+		x = 8
+		y = 7
+		cost = 7
+		completion_reward = {
+			add_stability = 0.01
+			country_event = { id = IND_1937.4 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_close_the_vigo_file
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_send_the_civil_commission }
+		x = 8
+		y = 8
+		cost = 7
+		completion_reward = {
+			if = { limit = { has_idea = IND_wabash_emergency } remove_ideas = IND_wabash_emergency }
+			set_country_flag = IND_vigo_crisis_resolved
+			add_stability = 0.03
+			country_event = { id = IND_1937.5 hours = 6 }
+		}
+	}
+
+	# Consortium Credit
+	focus = {
+		id = IND_trace_the_chicago_note
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_emergency_outlives_the_governor }
+		x = 12
+		y = 7
+		cost = 7
+		completion_reward = {
+			add_political_power = -25
+			country_event = { id = IND_hidden.1 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_follow_the_utility_accounts
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_trace_the_chicago_note }
+		x = 12
+		y = 8
+		cost = 7
+		completion_reward = {
+			add_political_power = -25
+			country_event = { id = IND_hidden.2 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_open_the_chicago_ledger
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_follow_the_utility_accounts }
+		x = 12
+		y = 9
+		cost = 7
+		completion_reward = {
+			country_event = { id = IND_hidden.3 hours = 6 }
+		}
+	}
+
+	# First intelligence work can begin when the ledger is open
+	focus = {
+		id = IND_the_special_services_section
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_open_the_chicago_ledger }
+		x = 17
+		y = 9
+		cost = 7
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				create_intelligence_agency = yes
+			}
+			else = { add_ideas = IND_special_services_without_agency }
 			add_political_power = -25
 		}
 	}
 
 	focus = {
-		id = IND_count_the_freight_cars
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = IND_a_state_in_suspension }
-		x = 5
-		y = 2
-		cost = 7
-		available_if_capitulated = yes
-
+		id = IND_indiana_signs_its_own_orders
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_reissue_the_payroll_orders }
+		prerequisite = { focus = IND_close_the_vigo_file }
+		prerequisite = { focus = IND_open_the_chicago_ledger }
+		available = { has_country_flag = IND_consortium_crisis_resolved }
+		x = 8
+		y = 10
+		cost = 4
 		completion_reward = {
-			396 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			subtract_from_variable = { var = IND_federal_pressure value = 5 }
-			clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-			add_political_power = 10
+			set_country_flag = IND_home_crises_resolved
+			add_stability = 0.03
+			add_political_power = 50
+			country_event = { id = IND_1937.6 hours = 6 }
+		}
+	}
+
+	##################################
+	# THE FEDERAL LINE
+	##################################
+
+	focus = {
+		id = IND_contest_the_freight_holds
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = IND_indiana_signs_its_own_orders }
+		x = 8
+		y = 11
+		cost = 7
+		completion_reward = {
+			if = { limit = { has_idea = IND_federal_embargo } remove_ideas = IND_federal_embargo }
+			add_ideas = IND_federal_standoff
+			set_country_flag = IND_federal_standoff_active
+			add_political_power = 25
+			country_event = { id = IND_1937.7 hours = 6 }
 		}
 	}
 
 	focus = {
-		id = IND_the_furnaces_at_gary
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = IND_a_state_in_suspension }
-		x = 11
-		y = 2
+		id = IND_survey_the_calumet_approaches
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_contest_the_freight_holds }
+		x = 3
+		y = 12
 		cost = 7
-		available_if_capitulated = yes
+		completion_reward = {
+			1082 = {
+				add_building_construction = { type = bunker level = 2 instant_build = yes }
+			}
+			add_ideas = IND_calumet_fieldworks
+			set_country_flag = IND_calumet_approaches_prepared
+		}
+	}
 
+	focus = {
+		id = IND_recall_the_38th
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_contest_the_freight_holds }
+		x = 6
+		y = 12
+		cost = 7
+		completion_reward = {
+			division_template = {
+				name = "State Line Regiment"
+				is_locked = yes
+				priority = 2
+				template_counter = 73
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+			}
+			1082 = {
+				create_unit = {
+					division = "name = \"Calumet State Line Regiment\" division_template = \"State Line Regiment\" start_experience_factor = 0.20 start_equipment_factor = 0.90 start_manpower_factor = 1.00"
+					owner = ROOT
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 800
+				producer = IND
+			}
+			army_experience = 15
+			set_country_flag = IND_38th_recalled
+		}
+	}
+
+	focus = {
+		id = IND_stockpile_the_monon_yards
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_contest_the_freight_holds }
+		x = 10
+		y = 12
+		cost = 7
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = IND
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 150
+				producer = IND
+			}
+			add_command_power = 25
+			set_country_flag = IND_monon_yards_stockpiled
+		}
+	}
+
+	focus = {
+		id = IND_make_washington_move_first
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_contest_the_freight_holds }
+		x = 13
+		y = 12
+		cost = 7
+		completion_reward = {
+			add_ideas = IND_washington_moves_first
+			add_political_power = -50
+			add_stability = 0.03
+			add_war_support = 0.05
+			set_country_flag = IND_washington_provoked
+		}
+	}
+
+	focus = {
+		id = IND_the_hammond_inspection
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = IND_contest_the_freight_holds }
+		available = {
+			country_exists = USA
+			NOT = { has_war_with = USA }
+			NOT = { has_border_war_with = USA }
+			USA = { controls_state = 395 }
+		}
+		x = 8
+		y = 13
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = IND_the_hammond_inspection_tt
+			hidden_effect = {
+				country_event = { id = IND_federal.1 hours = 6 }
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_state_on_level_ground
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_hammond_inspection }
+		available = { has_country_flag = IND_federal_conflict_resolved }
+		x = 8
+		y = 14
+		cost = 4
+		completion_reward = {
+			set_country_flag = IND_flat_ground
+			add_ideas = IND_indiana_on_level_ground
+			add_political_power = 100
+			add_stability = 0.05
+			country_event = { id = IND_federal.6 hours = 6 }
+		}
+	}
+
+	##################################
+	# BUILDING OUT, 1938 AND AFTER
+	##################################
+
+	# Industry
+	focus = {
+		id = IND_an_indiana_works_program
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IND_the_state_on_level_ground }
+		x = 6
+		y = 16
+		cost = 5
+		completion_reward = {
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_ideas = IND_state_works_program
+			add_political_power = -25
+		}
+	}
+
+	focus = {
+		id = IND_keep_the_furnaces_lit
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_an_indiana_works_program }
+		x = 8
+		y = 17
+		cost = 5
 		completion_reward = {
 			1082 = {
 				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				add_resource = { type = steel amount = 8 }
 			}
-			add_to_variable = { var = IND_federal_pressure value = 8 }
-			add_to_variable = { var = IND_consortium_exposure value = 5 }
-			clamp_variable = { var = IND_federal_pressure min = 0 max = 100 }
-			clamp_variable = { var = IND_consortium_exposure min = 0 max = 100 }
 		}
 	}
 
 	focus = {
-		id = IND_the_statehouse_calendar
-		icon = GFX_goal_generic_neutrality_focus
-		prerequisite = { focus = IND_a_state_in_suspension }
+		id = IND_allison_studebaker_and_gary
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_studebaker_retools }
+		prerequisite = { focus = IND_allison_at_speedway }
 		x = 8
-		y = 3
+		y = 19
 		cost = 5
-		available_if_capitulated = yes
-
-		available = {
-			date > 1936.3.1
-		}
-
 		completion_reward = {
-			set_country_flag = IND_opening_chapter_complete
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			1083 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_tech_bonus = {
+				name = IND_industrial_mobilization_bonus
+				bonus = 0.50
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	# Military
+	focus = {
+		id = IND_a_guard_worth_the_name
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_the_state_on_level_ground }
+		x = 12
+		y = 16
+		cost = 5
+		completion_reward = {
+			army_experience = 20
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 500
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_lessons_of_the_federal_line
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_divisional_maneuvers }
+		x = 10
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = IND_federal_line_doctrine_bonus
+				bonus = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = IND_the_hoosier_general_staff
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_lessons_of_the_federal_line }
+		prerequisite = { focus = IND_culver_staff_course }
+		prerequisite = { focus = IND_atterbury_cantonment }
+		x = 12
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_hoosier_general_staff
+			add_command_power = 25
+		}
+	}
+
+	# Diplomacy
+	focus = {
+		id = IND_consulates_on_the_river
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = IND_office_of_strategic_inquiry }
+		x = 19
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_open_consulates
 			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_a_place_between_powers
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = IND_consulates_on_the_river }
+		x = 19
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_stability = 0.03
+			add_war_support = 0.03
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_the_hoosier_mission
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = IND_the_great_lakes_mission }
+		prerequisite = { focus = IND_the_meridian_street_question }
+		x = 19
+		y = 21
+		cost = 5
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			set_country_flag = IND_hoosier_mission_established
+			add_political_power = 75
+		}
+	}
+
+	# Route-specific government
+	focus = {
+		id = IND_the_government_after_emergency
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_state_on_level_ground }
+		x = 16
+		y = 16
+		cost = 5
+		completion_reward = {
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = IND_mcnutts_second_mandate
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_the_government_after_emergency }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 16
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_mcnutt_reform_cabinet
+			country_event = { id = IND_government.1 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_regency_in_law
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_government_after_emergency }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 16
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_regency_charter
+			country_event = { id = IND_government.2 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_silver_county_governments
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_the_government_after_emergency }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 16
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_silver_county_system
+			country_event = { id = IND_government.3 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_congress_of_locals
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_the_government_after_emergency }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 16
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_wabash_local_councils
+			country_event = { id = IND_government.4 hours = 6 }
+		}
+	}
+
+	# Purdue
+	focus = {
+		id = IND_whispers_from_west_lafayette
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = IND_the_state_on_level_ground }
+		x = 1
+		y = 16
+		cost = 5
+		completion_reward = {
+			add_political_power = 25
+			country_event = { id = IND_purdue.1 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_west_lafayette_memorandum
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = IND_whispers_from_west_lafayette }
+		available = { has_country_flag = IND_purdue_whispers_heard }
+		x = 1
+		y = 17
+		cost = 5
+		completion_reward = {
+			country_event = { id = IND_purdue.2 hours = 6 }
+		}
+	}
+
+	##################################
+	# PURDUE: INSTRUMENTS AND ATOMS
+	##################################
+
+	focus = {
+		id = IND_the_van_de_graaff_tower
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = IND_the_west_lafayette_memorandum }
+		x = 0
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = -35
+			add_tech_bonus = {
+				name = IND_purdue_electronics_bonus
+				bonus = 0.50
+				uses = 1
+				category = electronics
+			}
+			396 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = IND_the_purdue_cyclotron
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = IND_the_west_lafayette_memorandum }
+		x = 2
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = -50
+			add_tech_bonus = {
+				name = IND_purdue_cyclotron_bonus
+				bonus = 0.25
+				uses = 1
+				category = nuclear
+			}
+			country_event = { id = IND_expansion.1 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_lark_horovitz_department
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = IND_the_van_de_graaff_tower }
+		prerequisite = { focus = IND_the_purdue_cyclotron }
+		x = 1
+		y = 19
+		cost = 7
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = IND_lafayette_instrument_shops
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_lark_horovitz_department }
+		x = 1
+		y = 20
+		cost = 5
+		completion_reward = {
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_ideas = IND_purdue_instrument_network
+		}
+	}
+
+	focus = {
+		id = IND_the_isotope_committee
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = IND_lafayette_instrument_shops }
+		x = 1
+		y = 21
+		cost = 7
+		completion_reward = {
+			set_country_flag = IND_isotope_committee_established
+			add_tech_bonus = {
+				name = IND_isotope_committee_bonus
+				bonus = 0.50
+				uses = 1
+				category = nuclear
+			}
+			add_political_power = 50
+		}
+	}
+
+	##################################
+	# STATE WORKS AND WAR INDUSTRY
+	##################################
+
+	focus = {
+		id = IND_crossroads_of_america
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_an_indiana_works_program }
+		x = 4
+		y = 17
+		cost = 5
+		completion_reward = {
+			396 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			1083 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = IND_lines_from_boone_county
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_an_indiana_works_program }
+		x = 6
+		y = 17
+		cost = 5
+		completion_reward = {
+			396 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_ideas = IND_boone_county_electrification
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = IND_the_monon_and_pennsylvania
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_crossroads_of_america }
+		x = 4
+		y = 18
+		cost = 5
+		completion_reward = {
+			1082 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			1084 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 10
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_ball_jars_and_lilly_vials
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = IND_lines_from_boone_county }
+		x = 6
+		y = 18
+		cost = 5
+		completion_reward = {
 			add_stability = 0.02
+			add_tech_bonus = {
+				name = IND_hoosier_manufacturing_bonus
+				bonus = 0.50
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = IND_studebaker_retools
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_keep_the_furnaces_lit }
+		x = 7
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 500
+				producer = IND
+			}
+			add_tech_bonus = {
+				name = IND_studebaker_motorization_bonus
+				bonus = 0.50
+				uses = 1
+				category = motorized_equipment
+			}
+			country_event = { id = IND_expansion.2 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_allison_at_speedway
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = IND_keep_the_furnaces_lit }
+		x = 9
+		y = 18
+		cost = 5
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = IND_allison_aircraft_bonus
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+			country_event = { id = IND_expansion.3 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_evansville_keeps_the_river
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = IND_the_monon_and_pennsylvania }
+		x = 3
+		y = 19
+		cost = 5
+		completion_reward = {
+			1084 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_the_winter_quarters_at_peru
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = IND_the_monon_and_pennsylvania }
+		x = 5
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_stability = 0.01
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 5
+				producer = IND
+			}
+			country_event = { id = IND_expansion.4 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_state_purchasing_standards
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_ball_jars_and_lilly_vials }
+		x = 6
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_state_purchasing_board
+			add_political_power = 35
+		}
+	}
+
+	focus = {
+		id = IND_the_circus_trains
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_winter_quarters_at_peru }
+		x = 5
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_circus_rail_men
+			army_experience = 10
+			add_command_power = 15
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 15
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_indiana_arsenal
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_allison_studebaker_and_gary }
+		prerequisite = { focus = IND_state_purchasing_standards }
+		x = 8
+		y = 20
+		cost = 7
+		completion_reward = {
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			1082 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_ideas = IND_integrated_war_industry
+			country_event = { id = IND_expansion.5 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_circus_city
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_the_circus_trains }
+		x = 5
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_stability = 0.03
+			add_war_support = 0.03
+			add_political_power = 50
+		}
+	}
+
+	##################################
+	# THE GUARD, CULVER, AND THE CAMPS
+	##################################
+
+	focus = {
+		id = IND_the_38th_cyclone
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = IND_a_guard_worth_the_name }
+		x = 10
+		y = 17
+		cost = 5
+		completion_reward = {
+			army_experience = 20
+			add_ideas = IND_38th_cyclone_tradition
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 750
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_culver_military_academy
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IND_a_guard_worth_the_name }
+		x = 12
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_political_power = -25
+			army_experience = 15
+			country_event = { id = IND_expansion.6 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_fort_benjamin_harrison
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = IND_a_guard_worth_the_name }
+		x = 14
+		y = 17
+		cost = 5
+		completion_reward = {
+			396 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			add_command_power = 20
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 200
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_divisional_maneuvers
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IND_the_38th_cyclone }
+		x = 10
+		y = 18
+		cost = 5
+		completion_reward = {
+			army_experience = 20
+			add_war_support = 0.02
+		}
+	}
+
+	focus = {
+		id = IND_the_black_horse_troop
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = IND_culver_military_academy }
+		x = 12
+		y = 18
+		cost = 5
+		completion_reward = {
+			army_experience = 15
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 300
+				producer = IND
+			}
+			country_event = { id = IND_expansion.7 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_a_state_training_command
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IND_fort_benjamin_harrison }
+		x = 14
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_state_training_command
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = IND_culver_staff_course
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = IND_the_black_horse_troop }
+		x = 12
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_culver_officer_corps
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = IND_atterbury_cantonment
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_a_state_training_command }
+		x = 14
+		y = 19
+		cost = 7
+		completion_reward = {
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+			}
+			add_manpower = 5000
+			country_event = { id = IND_expansion.8 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_baer_field
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = IND_the_hoosier_general_staff }
+		x = 11
+		y = 21
+		cost = 5
+		completion_reward = {
+			1083 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+			air_experience = 30
+			add_tech_bonus = {
+				name = IND_baer_field_bonus
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = IND_jefferson_proving_ground
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = IND_the_hoosier_general_staff }
+		x = 13
+		y = 21
+		cost = 5
+		completion_reward = {
+			1084 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_tech_bonus = {
+				name = IND_jefferson_artillery_bonus
+				bonus = 0.50
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = IND_an_army_of_our_own
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_baer_field }
+		prerequisite = { focus = IND_jefferson_proving_ground }
+		x = 12
+		y = 22
+		cost = 7
+		completion_reward = {
+			add_ideas = IND_army_of_our_own
+			army_experience = 35
+			add_war_support = 0.05
+		}
+	}
+
+	##################################
+	# SPECIAL SERVICES AND DIPLOMACY
+	##################################
+
+	focus = {
+		id = IND_the_state_police_index
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = IND_the_special_services_section }
+		prerequisite = { focus = IND_the_state_on_level_ground }
+		x = 19
+		y = 15
+		cost = 5
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = IND_state_police_radio_bonus
+				bonus = 0.50
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = IND_railroad_listening_posts
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = IND_the_state_police_index }
+		x = 19
+		y = 16
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_railroad_listening_network
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = IND_office_of_strategic_inquiry
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = IND_railroad_listening_posts }
+		x = 19
+		y = 17
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_strategic_inquiry
+			add_political_power = -25
+			country_event = { id = IND_expansion.9 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_great_lakes_mission
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = IND_a_place_between_powers }
+		x = 18
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_great_lakes_trade
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_the_meridian_street_question
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_a_place_between_powers }
+		x = 20
+		y = 20
+		cost = 5
+		completion_reward = {
+			country_event = { id = IND_expansion.10 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_embassies_without_recognition
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = IND_the_hoosier_mission }
+		x = 19
+		y = 22
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_unrecognized_embassies
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = IND_the_indiana_league
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = IND_embassies_without_recognition }
+		x = 19
+		y = 23
+		cost = 7
+		completion_reward = {
+			set_rule = { can_create_factions = yes }
+			add_stability = 0.03
+			add_war_support = 0.03
+			add_political_power = 100
+		}
+	}
+
+	##################################
+	# McNUTT AFTER THE EMERGENCY
+	##################################
+
+	focus = {
+		id = IND_the_appointments_book
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_mcnutts_second_mandate }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 15
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = IND_willkies_recovery_commission
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_mcnutts_second_mandate }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 17
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = 35
+			add_tech_bonus = {
+				name = IND_willkie_recovery_bonus
+				bonus = 0.50
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = IND_department_heads_not_county_chairs
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_the_appointments_book }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 15
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = IND_the_public_utility_compact
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IND_willkies_recovery_commission }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 17
+		y = 19
+		cost = 5
+		completion_reward = {
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_political_power = 35
+		}
+	}
+
+	focus = {
+		id = IND_the_price_of_cooperation
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_department_heads_not_county_chairs }
+		prerequisite = { focus = IND_the_public_utility_compact }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 16
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = IND_expansion.11 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_machine_under_law
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = IND_the_price_of_cooperation }
+		mutually_exclusive = { focus = IND_commission_government }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 15
+		y = 21
+		cost = 5
+		completion_reward = {
+			set_country_flag = IND_machine_under_law_chosen
+			add_ideas = IND_machine_under_law_idea
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = IND_commission_government
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_the_price_of_cooperation }
+		mutually_exclusive = { focus = IND_machine_under_law }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 17
+		y = 21
+		cost = 5
+		completion_reward = {
+			set_country_flag = IND_commission_government_chosen
+			add_ideas = IND_commission_government_idea
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = IND_the_indiana_model
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_machine_under_law focus = IND_commission_government }
+		allow_branch = { has_country_flag = IND_route_democratic }
+		available = { has_country_flag = IND_route_democratic }
+		x = 16
+		y = 22
+		cost = 7
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.03
+			add_political_power = 100
+		}
+	}
+
+	##################################
+	# THE HARRISON REGENCY
+	##################################
+
+	focus = {
+		id = IND_the_benjamin_harrison_papers
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_regency_in_law }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 15
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = IND_the_treasury_of_the_crown
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IND_the_regency_in_law }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 17
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_political_power = 35
+		}
+	}
+
+	focus = {
+		id = IND_the_assemblys_remonstrance
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_benjamin_harrison_papers }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 15
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_stability = 0.04
+			add_political_power = 35
+		}
+	}
+
+	focus = {
+		id = IND_the_columbia_club_court
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = IND_the_treasury_of_the_crown }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 17
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = IND_columbia_club_court
+		}
+	}
+
+	focus = {
+		id = IND_the_empty_throne
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_assemblys_remonstrance }
+		prerequisite = { focus = IND_the_columbia_club_court }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 16
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = IND_expansion.12 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_crown_in_trust
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_empty_throne }
+		mutually_exclusive = { focus = IND_a_harrison_convention }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 15
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_crown_in_trust_idea
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = IND_a_harrison_convention
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_the_empty_throne }
+		mutually_exclusive = { focus = IND_the_crown_in_trust }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 17
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_harrison_convention_idea
+			add_war_support = 0.04
+		}
+	}
+
+	focus = {
+		id = IND_the_first_royal_session
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = IND_the_crown_in_trust focus = IND_a_harrison_convention }
+		allow_branch = { has_country_flag = IND_route_crown }
+		available = { has_country_flag = IND_route_crown }
+		x = 16
+		y = 22
+		cost = 7
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 100
+		}
+	}
+
+	##################################
+	# THE SILVER STATE
+	##################################
+
+	focus = {
+		id = IND_read_the_remaining_boxes
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = IND_silver_county_governments }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 15
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.02
+		}
+	}
+
+	focus = {
+		id = IND_the_asheville_cadres
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_silver_county_governments }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 17
+		y = 18
+		cost = 5
+		completion_reward = {
+			add_manpower = 5000
+			add_war_support = 0.03
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = IND_county_commanders
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = IND_read_the_remaining_boxes }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 15
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_silver_county_commanders
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = IND_a_silver_civil_service
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_the_asheville_cadres }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 17
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.01
+		}
+	}
+
+	focus = {
+		id = IND_the_old_files_price
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = IND_county_commanders }
+		prerequisite = { focus = IND_a_silver_civil_service }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 16
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = IND_expansion.13 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_burn_the_index
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = IND_the_old_files_price }
+		mutually_exclusive = { focus = IND_rule_by_file }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 15
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_burned_index_idea
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = IND_rule_by_file
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = IND_the_old_files_price }
+		mutually_exclusive = { focus = IND_burn_the_index }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 17
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_rule_by_file_idea
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = IND_the_silver_state_consolidated
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = IND_burn_the_index focus = IND_rule_by_file }
+		allow_branch = { has_country_flag = IND_route_pelley }
+		available = { has_country_flag = IND_route_pelley }
+		x = 16
+		y = 22
+		cost = 7
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.03
+			add_political_power = 100
+		}
+	}
+
+	##################################
+	# THE HOOSIER COMMONWEALTH
+	##################################
+
+	focus = {
+		id = IND_wabash_reconstruction_board
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = IND_the_congress_of_locals }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 15
+		y = 18
+		cost = 5
+		completion_reward = {
+			1084 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			add_political_power = -25
+		}
+	}
+
+	focus = {
+		id = IND_brotherhood_rail_authority
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = IND_the_congress_of_locals }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 17
+		y = 18
+		cost = 5
+		completion_reward = {
+			1083 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			1084 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 15
+				producer = IND
+			}
+		}
+	}
+
+	focus = {
+		id = IND_mine_safety_committees
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_wabash_reconstruction_board }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 15
+		y = 19
+		cost = 5
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = IND_mine_safety_committees_idea
+		}
+	}
+
+	focus = {
+		id = IND_gary_shop_councils
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = IND_brotherhood_rail_authority }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 17
+		y = 19
+		cost = 5
+		completion_reward = {
+			1082 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+			add_war_support = 0.02
+		}
+	}
+
+	focus = {
+		id = IND_a_constitution_of_locals
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_mine_safety_committees }
+		prerequisite = { focus = IND_gary_shop_councils }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 16
+		y = 20
+		cost = 5
+		completion_reward = {
+			add_political_power = 50
+			country_event = { id = IND_expansion.14 hours = 6 }
+		}
+	}
+
+	focus = {
+		id = IND_the_state_plan
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = IND_a_constitution_of_locals }
+		mutually_exclusive = { focus = IND_the_sovereign_locals }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 15
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_state_plan_idea
+			add_political_power = -50
+		}
+	}
+
+	focus = {
+		id = IND_the_sovereign_locals
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_a_constitution_of_locals }
+		mutually_exclusive = { focus = IND_the_state_plan }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 17
+		y = 21
+		cost = 5
+		completion_reward = {
+			add_ideas = IND_sovereign_locals_idea
+			add_stability = 0.04
+		}
+	}
+
+	focus = {
+		id = IND_the_hoosier_commonwealth
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = IND_the_state_plan focus = IND_the_sovereign_locals }
+		allow_branch = { has_country_flag = IND_route_communist }
+		available = { has_country_flag = IND_route_communist }
+		x = 16
+		y = 22
+		cost = 7
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 75
 		}
 	}
 }

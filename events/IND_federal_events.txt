@@ -1,0 +1,187 @@
+add_namespace = IND_federal
+
+country_event = {
+	id = IND_federal.1
+	title = IND_federal.1.t
+	desc = IND_federal.1.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IND_federal.1.a
+		hidden_effect = {
+			set_country_flag = IND_federal_border_conflict_started
+			set_country_flag = IND_federal_border_conflict_active
+
+			USA = {
+				division_template = {
+					name = "Federal Emergency Brigade"
+					is_locked = yes
+					priority = 2
+					template_counter = 74
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+			}
+
+			395 = {
+				create_unit = {
+					division = "name = \"7th Federal Emergency Brigade\" division_template = \"Federal Emergency Brigade\" start_experience_factor = 0.20 start_equipment_factor = 0.95 start_manpower_factor = 1.00"
+					owner = USA
+				}
+				create_unit = {
+					division = "name = \"12th Federal Emergency Brigade\" division_template = \"Federal Emergency Brigade\" start_experience_factor = 0.15 start_equipment_factor = 0.90 start_manpower_factor = 1.00"
+					owner = USA
+				}
+				create_unit = {
+					division = "name = \"19th Federal Emergency Brigade\" division_template = \"Federal Emergency Brigade\" start_experience_factor = 0.15 start_equipment_factor = 0.90 start_manpower_factor = 1.00"
+					owner = USA
+				}
+				create_unit = {
+					division = "name = \"33rd Federal Emergency Brigade\" division_template = \"Federal Emergency Brigade\" start_experience_factor = 0.10 start_equipment_factor = 0.85 start_manpower_factor = 1.00"
+					owner = USA
+				}
+			}
+
+			start_border_war = {
+				change_state_after_war = no
+				combat_width = 80
+				minimum_duration_in_days = 30
+				attacker = {
+					state = 395
+					num_provinces = 1
+					on_win = IND_federal.4
+					on_lose = IND_federal.5
+					on_cancel = IND_federal.7
+				}
+				defender = {
+					state = 1082
+					num_provinces = 1
+					on_win = IND_federal.2
+					on_lose = IND_federal.3
+					on_cancel = IND_federal.8
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = IND_federal.2
+	title = IND_federal.2.t
+	desc = IND_federal.2.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_country_flag = IND_federal_conflict_resolved
+		set_country_flag = IND_federal_line_victory
+		clr_country_flag = IND_federal_border_conflict_active
+		if = { limit = { has_idea = IND_federal_standoff } remove_ideas = IND_federal_standoff }
+		if = { limit = { has_idea = IND_calumet_fieldworks } remove_ideas = IND_calumet_fieldworks }
+		if = { limit = { has_idea = IND_washington_moves_first } remove_ideas = IND_washington_moves_first }
+		add_ideas = IND_federal_line_victory
+		add_stability = 0.05
+		add_war_support = 0.10
+		army_experience = 25
+	}
+	option = { name = IND_federal.2.a }
+}
+
+country_event = {
+	id = IND_federal.3
+	title = IND_federal.3.t
+	desc = IND_federal.3.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_country_flag = IND_federal_conflict_resolved
+		set_country_flag = IND_federal_line_defeat
+		clr_country_flag = IND_federal_border_conflict_active
+		if = { limit = { has_idea = IND_federal_standoff } remove_ideas = IND_federal_standoff }
+		if = { limit = { has_idea = IND_calumet_fieldworks } remove_ideas = IND_calumet_fieldworks }
+		if = { limit = { has_idea = IND_washington_moves_first } remove_ideas = IND_washington_moves_first }
+		add_timed_idea = { idea = IND_federal_supervision days = 720 }
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+	option = { name = IND_federal.3.a }
+}
+
+country_event = {
+	id = IND_federal.4
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_political_power = 100
+	}
+}
+
+country_event = {
+	id = IND_federal.5
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = USA_lost_indiana_operation
+		add_stability = -0.10
+		add_war_support = -0.10
+		add_timed_idea = { idea = IND_federal_humiliation days = 1460 }
+	}
+}
+
+country_event = {
+	id = IND_federal.6
+	title = IND_federal.6.t
+	desc = {
+		trigger = { has_country_flag = IND_federal_line_victory }
+		text = IND_federal.6.d_victory
+	}
+	desc = {
+		trigger = { has_country_flag = IND_federal_line_defeat }
+		text = IND_federal.6.d_defeat
+	}
+	desc = {
+		trigger = { has_country_flag = IND_federal_line_compromise }
+		text = IND_federal.6.d_compromise
+	}
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_federal.6.a }
+}
+
+country_event = {
+	id = IND_federal.7
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { set_country_flag = USA_indiana_operation_canceled }
+}
+
+country_event = {
+	id = IND_federal.8
+	title = IND_federal.8.t
+	desc = IND_federal.8.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_country_flag = IND_federal_conflict_resolved
+		set_country_flag = IND_federal_line_compromise
+		clr_country_flag = IND_federal_border_conflict_active
+		if = { limit = { has_idea = IND_federal_standoff } remove_ideas = IND_federal_standoff }
+		if = { limit = { has_idea = IND_calumet_fieldworks } remove_ideas = IND_calumet_fieldworks }
+		if = { limit = { has_idea = IND_washington_moves_first } remove_ideas = IND_washington_moves_first }
+		add_timed_idea = { idea = IND_federal_supervision days = 365 }
+	}
+	option = { name = IND_federal.8.a }
+}

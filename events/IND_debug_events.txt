@@ -24,6 +24,10 @@ country_event = {
 		country_event = { id = IND_purdue.1 hours = 1 }
 	}
 	option = {
+		name = IND_debug.1.hammond
+		country_event = { id = IND_federal.1 hours = 1 }
+	}
+	option = {
 		name = IND_debug.1.close
 	}
 }

@@ -1,1 +1,1 @@
-# The old Route Ledger was removed. Route choice is now explicit in the focus tree.
+# Intentionally empty. Legacy guide events are not used.

@@ -1,39 +1,53 @@
-TENTOESDOWN FOUR-PATH CONSOLIDATION — STATIC VALIDATION
-Date: 1 August 2026
+TENTOESDOWN MEAT AND BONES TREE REBUILD - STATIC VALIDATION
+Date: 2 August 2026
 
 PASSED
 
-- 27 gameplay script files passed quote, brace, and final-newline checks.
-- 31 unique focus definitions and every focus reference resolved.
-- Exactly 4 route categories and 20 campaign decisions.
-- All 4 final takeover focuses require 70 Political Control.
-- All 4 route categories disappear after the takeover starts.
-- 34 unique Indiana events and every scripted event reference resolved.
-- 16 national spirits and every add, remove, and has-idea reference resolved.
-- 6 characters and every recruitment, promotion, and retirement reference resolved.
-- Route leaders are recruited only in country history, not inside events.
-- 357 unique localization keys with full focus, decision, category, idea, character, event, option, and tooltip coverage.
+- 30 gameplay TXT files passed quote and brace checks.
+- 121 unique focus definitions and every focus prerequisite resolved with no cycles.
+- Focus coordinates span x=0-20 and y=0-23; the opening is centered and continuous focuses are placed at y=3600 below story content.
+- Nine shared coordinate sets are intentional government-branch overlays. Every overlapping focus has a distinct, mutually exclusive route visibility condition.
+- Exactly 4 political decision categories and 20 campaign decisions.
+- Every campaign decision description states its Political Control and secondary rewards.
+- All 4 final political focuses require 70 Political Control.
+- All 4 political categories disappear when the transfer begins.
+- 64 unique Indiana events and every scripted event reference resolved.
+- 55 national spirits and every add, remove, timed-add, picture, and localization reference resolved.
+- 6 characters and every promotion, retirement, and advisor reference resolved.
+- All four active rulers receive a country-leader description through the supported set_country_leader_description effect.
+- 709 unique localization keys with no duplicates and complete focus, event, option, idea, tooltip, character, decision, and category coverage.
 - UTF-8 BOM and final newlines on every English localization file.
-- No active A Government Washington Can Name, old Political Crisis category, next-focus gating copy, or three-route guide text.
-- Communist opposition size is 55% with Central Indiana forced as its capital.
-- Four communist preparations correctly feed the post-split militia event.
-- All used focus and event graphics exist in the installed Hearts of Iron IV files.
-- Both decision icons are used by installed vanilla decisions.
+- No active player-facing prose refers to a crisis count, route ledger, chapter list, next-focus gate, or implementation state.
+- Communist opposition size is 55 percent with Central Indiana forced as its capital.
+- Four communist preparations feed the post-split militia event, for two base and six optional formations.
+- The federal conflict uses the actual Illinois-Calumet state contact, one combat province per side, no state transfer, 80 combat width, and a 30-day minimum duration.
+- Federal victory, Indiana victory, Indiana defeat, and cancellation callbacks all resolve to defined events.
+- The United States humiliation lasts 1,460 days; Indiana supervision lasts 720 or 365 days.
+- Every used focus icon, event picture, idea picture, and decision icon was found in the installed Hearts of Iron IV files or vanilla scripts.
 - Every national-spirit modifier appears in installed vanilla ideas.
-- Civil-war capital, off-map factory, variable clamp, equipment producer, and locked militia template syntax were checked against installed vanilla examples.
+- Country-existence, border-war, leader-description, locked-template, state-unit, equipment, and timed-idea syntax were checked against installed game documentation or vanilla examples.
 
-PREVIOUS ERROR-LOG FINDING
+STRUCTURE CHECK
 
-The current installed build's latest error log reported that route characters were being recruited from events, which the engine does not permit. That also caused Harrison promotion to fail. This package moves all six Indiana characters into country-history recruitment and leaves events responsible only for promotion or retirement.
+- Succession focus cost targets spring-summer 1936.
+- The three player-ordered domestic tracks occupy late 1936 through 1937.
+- Optional Hammond preparations trade time for forts, units, equipment, and political advantages.
+- The complete preparation path normally places the federal conflict in 1938.
+- Purdue and broad national branches require The State on Level Ground.
+- Post-emergency content forms five compact districts with self-contained mini-arcs and seven-week major endpoints.
 
 REMAINING ENGINE TEST
 
-Static validation cannot execute a full Hearts of Iron IV campaign. Start a new 1936 game and follow INSTALL_AND_TEST.txt.
+Static validation cannot execute a Hearts of Iron IV campaign. Start a new 1936 game and follow INSTALL_AND_TEST.txt.
 
 The most important live checks are:
 
-1. Each route category displays the Political Control value and prevents simultaneous operations.
-2. The democratic opposition receives Indianapolis and normally two of Indiana's four states.
-3. Fully prepared Wabash forces receive eight militia divisions after the split.
-4. The postwar crisis focus becomes available after the communist civil war ends.
-5. The latest error.log contains no new IND errors.
+1. Each political category displays Political Control and prevents simultaneous operations.
+2. The democratic civil-war side receives Indianapolis and roughly 55 percent of Indiana.
+3. Prepared militia spawn under the correct side after the split.
+4. The postwar focus becomes available when the communist civil war ends.
+5. The Hammond border conflict selects the intended units and applies both sides' callbacks.
+6. Country-tab leader biographies display after every political transfer.
+7. The latest error.log contains no new IND errors.
+8. The continuous-focus panel sits below the last story row at the user's resolution.
+9. Only the chosen government mini-tree is visible after level ground.

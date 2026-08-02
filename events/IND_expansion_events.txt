@@ -1,0 +1,150 @@
+add_namespace = IND_expansion
+
+country_event = {
+	id = IND_expansion.1
+	title = IND_expansion.1.t
+	desc = IND_expansion.1.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.1.a }
+}
+
+country_event = {
+	id = IND_expansion.2
+	title = IND_expansion.2.t
+	desc = IND_expansion.2.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.2.a }
+}
+
+country_event = {
+	id = IND_expansion.3
+	title = IND_expansion.3.t
+	desc = IND_expansion.3.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.3.a }
+}
+
+country_event = {
+	id = IND_expansion.4
+	title = IND_expansion.4.t
+	desc = IND_expansion.4.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.4.a }
+}
+
+country_event = {
+	id = IND_expansion.5
+	title = IND_expansion.5.t
+	desc = IND_expansion.5.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.5.a }
+}
+
+country_event = {
+	id = IND_expansion.6
+	title = IND_expansion.6.t
+	desc = IND_expansion.6.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.6.a }
+}
+
+country_event = {
+	id = IND_expansion.7
+	title = IND_expansion.7.t
+	desc = IND_expansion.7.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.7.a }
+}
+
+country_event = {
+	id = IND_expansion.8
+	title = IND_expansion.8.t
+	desc = IND_expansion.8.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.8.a }
+}
+
+country_event = {
+	id = IND_expansion.9
+	title = IND_expansion.9.t
+	desc = IND_expansion.9.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.9.a }
+}
+
+country_event = {
+	id = IND_expansion.10
+	title = IND_expansion.10.t
+	desc = IND_expansion.10.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = IND_expansion.10.a
+		add_ideas = IND_legion_indiana_compact
+		add_war_support = 0.03
+	}
+	option = {
+		name = IND_expansion.10.b
+		add_ideas = IND_legion_neutral_headquarters
+		add_stability = 0.03
+	}
+}
+
+country_event = {
+	id = IND_expansion.11
+	title = IND_expansion.11.t
+	desc = IND_expansion.11.d
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.11.a }
+}
+
+country_event = {
+	id = IND_expansion.12
+	title = IND_expansion.12.t
+	desc = IND_expansion.12.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.12.a }
+}
+
+country_event = {
+	id = IND_expansion.13
+	title = IND_expansion.13.t
+	desc = IND_expansion.13.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.13.a }
+}
+
+country_event = {
+	id = IND_expansion.14
+	title = IND_expansion.14.t
+	desc = IND_expansion.14.d
+	picture = GFX_report_event_gathering_protest
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_expansion.14.a }
+}

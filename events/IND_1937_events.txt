@@ -28,15 +28,8 @@ country_event = {
 country_event = {
 	id = IND_1937.2
 	title = IND_1937.2.t
-	desc = {
-		trigger = { NOT = { has_country_flag = IND_route_communist } }
-		text = IND_1937.2.d
-	}
-	desc = {
-		trigger = { has_country_flag = IND_route_communist }
-		text = IND_1937.2.d_communist
-	}
-	picture = GFX_report_event_gathering_protest
+	desc = IND_1937.2.d
+	picture = GFX_report_event_journalists_speech
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { name = IND_1937.2.a }
@@ -46,7 +39,7 @@ country_event = {
 	id = IND_1937.3
 	title = IND_1937.3.t
 	desc = IND_1937.3.d
-	picture = GFX_report_event_journalists_speech
+	picture = GFX_report_event_generic_sign_treaty
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { name = IND_1937.3.a }
@@ -55,8 +48,15 @@ country_event = {
 country_event = {
 	id = IND_1937.4
 	title = IND_1937.4.t
-	desc = IND_1937.4.d
-	picture = GFX_report_event_generic_sign_treaty
+	desc = {
+		trigger = { NOT = { has_country_flag = IND_route_communist } }
+		text = IND_1937.4.d
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_communist }
+		text = IND_1937.4.d_communist
+	}
+	picture = GFX_report_event_gathering_protest
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { name = IND_1937.4.a }
@@ -65,9 +65,36 @@ country_event = {
 country_event = {
 	id = IND_1937.5
 	title = IND_1937.5.t
-	desc = IND_1937.5.d
-	picture = GFX_report_event_generic_sign_treaty
+	desc = {
+		trigger = { NOT = { has_country_flag = IND_route_communist } }
+		text = IND_1937.5.d
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_communist }
+		text = IND_1937.5.d_communist
+	}
+	picture = GFX_report_event_gathering_protest
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { name = IND_1937.5.a }
+}
+
+country_event = {
+	id = IND_1937.6
+	title = IND_1937.6.t
+	desc = IND_1937.6.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1937.6.a }
+}
+
+country_event = {
+	id = IND_1937.7
+	title = IND_1937.7.t
+	desc = IND_1937.7.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1937.7.a }
 }

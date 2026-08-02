@@ -1,4 +1,4 @@
-TENTOESDOWN — STREAMLINED REBUILD
+TENTOESDOWN — FOUR-PATH CONSOLIDATION BUILD
 
 INSTALL
 
@@ -6,11 +6,12 @@ INSTALL
 2. Commit or back up the current TENTOESDOWN folder.
 3. Open the supplied ZIP.
 4. Open the folder named TENTOESDOWN.
-5. Copy everything inside it into your existing TENTOESDOWN mod folder.
+5. Copy everything inside it into the existing TENTOESDOWN mod folder.
 6. Merge folders and replace files when Windows asks.
 7. Start a new 1936 game. Old saves are not compatible.
 
-The package deliberately includes small replacement files for every obsolete event and localization file, so drag-and-drop replacement disables the old systems without requiring manual deletion.
+This is cumulative. Do not install an older streamlined package first.
+
 
 FIVE-MINUTE SMOKE TEST
 
@@ -19,7 +20,7 @@ FIVE-MINUTE SMOKE TEST
 Expected:
 - Exactly four starting national spirits.
 - No Indiana decision category before a route is chosen.
-- A two-page optional briefing that can be skipped without effects.
+- An optional two-page briefing.
 
 2. Open the console and enter:
 
@@ -27,49 +28,89 @@ Focus.AutoComplete
 Decision.Fast
 event IND_debug.1
 
-Choose “Add test resources.”
+Choose the test-resources option. It also sets Political Control to 100.
 
 3. Complete A State in Suspension.
 
 Expected:
-- Exactly three mutually exclusive political focuses appear.
-- Harrison, Pelley, and Hapgood are explained directly in their descriptions.
+- Exactly four mutually exclusive political focuses appear.
+- The choices are McNutt, Harrison, Pelley, and Hapgood.
 
-4. Choose The Harrison Offer, then Accounts Behind the Flag.
-
-Expected:
-- One category named The Political Crisis appears.
-- Only Commit the Guarantors is available.
-- Completing it unlocks The Harrison Name.
-- The next action replaces the previous one; actions do not accumulate.
-
-5. Continue through An American Crown.
+4. Choose Keep the Indiana Democrats.
 
 Expected:
-- Harrison Regency Council becomes leader.
-- Indiana becomes Non-Aligned.
-- The Political Crisis category disappears.
-- A Government Washington Can Name becomes available.
+- Exactly one Indiana category appears: The State Convention.
+- Political Control starts at 10.
+- Call the County Chairmen is available immediately.
 
-6. Complete A Government Washington Can Name, Whispers from West Lafayette, and The West Lafayette Memorandum.
+5. Complete The Machine in Daylight without taking the first decision.
 
 Expected:
-- Purdue is unavailable before the government handoff.
-- The first Purdue event only reveals the program.
-- The second event offers two clear settlements.
-- Either settlement removes The Federal Standoff and grants the listed nuclear bonus.
+- The focus is not blocked by a decision.
+- Two additional operations become visible.
+- Only one operation can run at a time.
+
+6. Continue through McNutt Holds the Statehouse after reaching 70 Political Control.
+
+Expected:
+- McNutt remains leader.
+- Wendell Willkie is available as an advisor after Bring Willkie Home.
+- The campaign category disappears.
+- All four starting crisis spirits remain.
+
+7. Complete The Emergency Outlives the Governor and its three parallel crisis focuses.
+
+Expected:
+- Close the Vigo File removes The Wabash Emergency.
+- Reissue the Payroll Orders removes A State in Suspension.
+- Open the Chicago Ledger removes Consortium Credit and adds the route-specific outcome.
+- The Federal Embargo remains.
+
+8. Complete Indiana Signs Its Own Orders and Contest the Freight Holds.
+
+Expected:
+- The severe Federal Embargo becomes the lighter Federal Standoff.
+- Special Services, Calumet industry, and Purdue content become available only now.
+
+9. Complete Whispers from West Lafayette and The West Lafayette Memorandum.
+
+Expected:
+- The first Purdue event reveals the procurement pattern.
+- The second event offers a secret state program or supervised university program.
+- Either choice removes the Federal Standoff and grants the listed research bonus.
 
 Turn Focus.AutoComplete and Decision.Fast off by entering both commands again.
 
+
 COMMUNIST ROUTE TEST
 
-Use a fresh 1936 game. Follow The Wabash Answer through The Wabash Congress.
+Use a fresh 1936 game.
+
+1. Choose The Wabash Answer.
+2. Complete all five campaign operations.
+3. Complete The Wabash Congress.
 
 Expected:
-- Powers Hapgood becomes leader of the Communist side.
-- A Democratic opposition receives roughly 35 percent of Indiana.
-- The Political Crisis category disappears when war begins.
-- A Government Washington Can Name remains locked while the civil war is active.
+- Powers Hapgood becomes leader of the communist side.
+- The democratic opposition receives Indianapolis and approximately 55% of Indiana, normally two of the four states.
+- The Wabash side receives eight militia divisions when every preparation was completed.
+- The communist campaign category disappears when the war starts.
+- The post-takeover crisis branch remains unavailable until the civil war ends.
+- The Wabash Emergency is not silently removed by the change of government.
+
+
+OTHER ROUTE CHECK
+
+Harrison:
+- The Continuity Campaign is the only route category.
+- The first credit operation grants one off-map civilian factory.
+- The Harrison Regency Council takes power after 70 Political Control.
+
+Pelley:
+- The Silver Entry is the only route category.
+- The takeover occurs through the Statehouse watch, without a civil war.
+- Pelley becomes leader after 70 Political Control.
+
 
 LOG CHECK
 
@@ -77,4 +118,6 @@ After testing, close the game and inspect:
 
 Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log
 
-Search for IND_, IND., IND_focus, IND_decisions, IND_ideas, and the TENTOESDOWN path. Errors from unrelated enabled mods should be separated from Indiana errors.
+Search for IND_, IND., IND_focus, IND_decisions, IND_ideas, and TENTOESDOWN.
+
+The previous build produced character recruitment errors because route leaders were recruited inside events. This package recruits all possible Indiana leaders in country history and only promotes them in events.

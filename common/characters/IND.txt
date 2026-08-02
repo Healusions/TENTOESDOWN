@@ -24,6 +24,24 @@ characters = {
 		}
 	}
 
+	IND_wendell_willkie = {
+		name = IND_wendell_willkie
+		country_leader = {
+			ideology = liberalism
+			expire = "1965.1.1"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = IND_wendell_willkie
+			ledger = civilian
+			cost = 100
+			allowed = { original_tag = IND }
+			visible = { has_country_flag = IND_willkie_advisor_unlocked }
+			available = { has_country_flag = IND_willkie_advisor_unlocked }
+			traits = { captain_of_industry }
+		}
+	}
+
 	IND_harrison_continuity_council = {
 		name = IND_harrison_continuity_council
 		country_leader = {

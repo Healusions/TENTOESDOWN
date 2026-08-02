@@ -1,13 +1,39 @@
-IND_the_political_crisis = {
+IND_mcnutt_campaign = {
 	icon = GFX_decision_category_generic_political_actions
 	priority = 100
 	allowed = { original_tag = IND }
 	visible = {
-		OR = {
-			has_country_flag = IND_route_crown
-			has_country_flag = IND_route_pelley
-			has_country_flag = IND_route_communist
-		}
+		has_country_flag = IND_route_democratic
+		NOT = { has_country_flag = IND_route_final_started }
+	}
+}
+
+IND_crown_campaign = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 100
+	allowed = { original_tag = IND }
+	visible = {
+		has_country_flag = IND_route_crown
+		NOT = { has_country_flag = IND_route_final_started }
+	}
+}
+
+IND_silver_campaign = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 100
+	allowed = { original_tag = IND }
+	visible = {
+		has_country_flag = IND_route_pelley
+		NOT = { has_country_flag = IND_route_final_started }
+	}
+}
+
+IND_wabash_campaign = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 100
+	allowed = { original_tag = IND }
+	visible = {
+		has_country_flag = IND_route_communist
 		NOT = { has_country_flag = IND_route_final_started }
 	}
 }

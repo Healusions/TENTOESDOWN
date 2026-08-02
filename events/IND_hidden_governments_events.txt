@@ -1,1 +1,76 @@
-# Superseded by the streamlined three-route opening.
+add_namespace = IND_hidden
+
+country_event = {
+	id = IND_hidden.1
+	title = IND_hidden.1.t
+	desc = {
+		trigger = { has_country_flag = IND_route_democratic }
+		text = IND_hidden.1.d_democratic
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_crown }
+		text = IND_hidden.1.d_crown
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_pelley }
+		text = IND_hidden.1.d_pelley
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_communist }
+		text = IND_hidden.1.d_communist
+	}
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IND_hidden.1.a
+		trigger = { has_country_flag = IND_route_democratic }
+		custom_effect_tooltip = IND_hidden_1_a_tt
+		hidden_effect = {
+			set_country_flag = IND_consortium_crisis_resolved
+			remove_ideas = IND_consortium_credit
+			add_ideas = IND_consortium_disclosed
+			add_political_power = -50
+			add_stability = 0.02
+		}
+	}
+
+	option = {
+		name = IND_hidden.1.b
+		trigger = { has_country_flag = IND_route_crown }
+		custom_effect_tooltip = IND_hidden_1_b_tt
+		hidden_effect = {
+			set_country_flag = IND_consortium_crisis_resolved
+			remove_ideas = IND_consortium_credit
+			add_ideas = IND_consortium_chartered
+			add_political_power = 25
+		}
+	}
+
+	option = {
+		name = IND_hidden.1.c
+		trigger = { has_country_flag = IND_route_pelley }
+		custom_effect_tooltip = IND_hidden_1_c_tt
+		hidden_effect = {
+			set_country_flag = IND_consortium_crisis_resolved
+			remove_ideas = IND_consortium_credit
+			add_ideas = IND_consortium_seized
+			add_political_power = 75
+			add_stability = -0.02
+		}
+	}
+
+	option = {
+		name = IND_hidden.1.d
+		trigger = { has_country_flag = IND_route_communist }
+		custom_effect_tooltip = IND_hidden_1_d_tt
+		hidden_effect = {
+			set_country_flag = IND_consortium_crisis_resolved
+			remove_ideas = IND_consortium_credit
+			add_ideas = IND_consortium_nationalized
+			add_political_power = 50
+			add_stability = -0.02
+		}
+	}
+}

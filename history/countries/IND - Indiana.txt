@@ -34,5 +34,9 @@ add_ideas = {
 
 recruit_character = IND_paul_v_mcnutt
 recruit_character = IND_frank_m_mchale
+recruit_character = IND_wendell_willkie
+recruit_character = IND_harrison_continuity_council
+recruit_character = IND_william_dudley_pelley
+recruit_character = IND_powers_hapgood
 
 set_country_flag = IND_history_loaded

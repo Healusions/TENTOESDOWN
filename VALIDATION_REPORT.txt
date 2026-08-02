@@ -1,28 +1,39 @@
-TENTOESDOWN STREAMLINED REBUILD — STATIC VALIDATION
+TENTOESDOWN FOUR-PATH CONSOLIDATION — STATIC VALIDATION
 Date: 1 August 2026
 
 PASSED
 
-- Brace balance and quoted-string checks across 26 game script files.
-- Final-newline checks across game scripts and localization.
-- 21 unique focus definitions and all focus prerequisite references.
-- 23 unique event definitions and all scripted event references.
-- 9 decision definitions inside exactly 1 decision category.
-- 11 national idea definitions and all add/remove/has-idea references.
-- Character recruitment, retirement, and promotion references.
-- 228 unique localization keys.
-- Focus, decision, category, idea, character, event, option, and tooltip localization coverage.
-- UTF-8 BOM on every English localization file.
-- No active references to Federal Pressure, the Route Ledger, Machine Control, Guard Cohesion, Consortium Exposure, Underground Strength, or Occupation Cycles.
-- No prohibited out-of-character language in active narrative localization.
-- All used focus, decision-category, and event-picture graphics exist in the installed HOI4 files.
-- All national-spirit modifiers exist in the installed HOI4 idea files.
-- Special effects checked against installed HOI4 examples: civil-war start, off-map factories, equipment grants, intelligence agency creation, truces, and nuclear research bonuses.
+- 27 gameplay script files passed quote, brace, and final-newline checks.
+- 31 unique focus definitions and every focus reference resolved.
+- Exactly 4 route categories and 20 campaign decisions.
+- All 4 final takeover focuses require 70 Political Control.
+- All 4 route categories disappear after the takeover starts.
+- 34 unique Indiana events and every scripted event reference resolved.
+- 16 national spirits and every add, remove, and has-idea reference resolved.
+- 6 characters and every recruitment, promotion, and retirement reference resolved.
+- Route leaders are recruited only in country history, not inside events.
+- 357 unique localization keys with full focus, decision, category, idea, character, event, option, and tooltip coverage.
+- UTF-8 BOM and final newlines on every English localization file.
+- No active A Government Washington Can Name, old Political Crisis category, next-focus gating copy, or three-route guide text.
+- Communist opposition size is 55% with Central Indiana forced as its capital.
+- Four communist preparations correctly feed the post-split militia event.
+- All used focus and event graphics exist in the installed Hearts of Iron IV files.
+- Both decision icons are used by installed vanilla decisions.
+- Every national-spirit modifier appears in installed vanilla ideas.
+- Civil-war capital, off-map factory, variable clamp, equipment producer, and locked militia template syntax were checked against installed vanilla examples.
 
-LOG NOTE
+PREVIOUS ERROR-LOG FINDING
 
-The existing 1 August error.log contained no matches for the active IND script names or TENTOESDOWN path. It was dominated by errors from other enabled content and is not an authoritative test of this rebuild.
+The current installed build's latest error log reported that route characters were being recruited from events, which the engine does not permit. That also caused Harrison promotion to fail. This package moves all six Indiana characters into country-history recruitment and leaves events responsible only for promotion or retirement.
 
-REMAINING TEST
+REMAINING ENGINE TEST
 
-Static validation cannot execute the HOI4 engine. Start a new 1936 game and follow INSTALL_AND_TEST.txt. The most important engine test is the Wabash civil-war split and the postwar availability of A Government Washington Can Name.
+Static validation cannot execute a full Hearts of Iron IV campaign. Start a new 1936 game and follow INSTALL_AND_TEST.txt.
+
+The most important live checks are:
+
+1. Each route category displays the Political Control value and prevents simultaneous operations.
+2. The democratic opposition receives Indianapolis and normally two of Indiana's four states.
+3. Fully prepared Wabash forces receive eight militia divisions after the split.
+4. The postwar crisis focus becomes available after the communist civil war ends.
+5. The latest error.log contains no new IND errors.

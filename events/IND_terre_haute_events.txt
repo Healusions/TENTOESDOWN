@@ -53,23 +53,109 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = IND_wabash_civil_war_started
 			retire_character = IND_paul_v_mcnutt
-			recruit_character = IND_powers_hapgood
 			promote_character = IND_powers_hapgood
 			set_politics = {
 				ruling_party = communism
 				elections_allowed = no
 			}
 			add_popularity = { ideology = communism popularity = 0.35 }
-			if = {
-				limit = { has_idea = IND_wabash_emergency }
-				remove_ideas = IND_wabash_emergency
-			}
 			add_ideas = IND_wabash_provisional_government
 			add_war_support = 0.10
 			start_civil_war = {
+				ruling_party = communism
 				ideology = democratic
-				size = 0.35
+				size = 0.55
+				army_ratio = 0.50
+				navy_ratio = 0
+				air_ratio = 0.50
+				capital = 396
 				keep_all_characters = yes
+			}
+			country_event = { id = IND_terre_haute.21 hours = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = IND_terre_haute.21
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		division_template = {
+			name = "Wabash Militia"
+			is_locked = yes
+			priority = 2
+			template_counter = 71
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+		}
+
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 800
+			producer = ROOT
+		}
+
+		random_owned_controlled_state = {
+			create_unit = {
+				division = "name = \"Vigo County Workers' Guard\" division_template = \"Wabash Militia\" start_experience_factor = 0.10 start_equipment_factor = 0.80 start_manpower_factor = 0.90"
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"Debs Memorial Battalion\" division_template = \"Wabash Militia\" start_experience_factor = 0.10 start_equipment_factor = 0.80 start_manpower_factor = 0.90"
+				owner = ROOT
+			}
+		}
+
+		if = {
+			limit = { has_country_flag = IND_comm_strike_press_prepared }
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Terre Haute Volunteer Column\" division_template = \"Wabash Militia\" start_experience_factor = 0.10 start_equipment_factor = 0.75 start_manpower_factor = 0.85"
+					owner = ROOT
+				}
+			}
+		}
+
+		if = {
+			limit = { has_country_flag = IND_comm_railroad_cells_prepared }
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Brotherhood Railway Column\" division_template = \"Wabash Militia\" start_experience_factor = 0.15 start_equipment_factor = 0.80 start_manpower_factor = 0.90"
+					owner = ROOT
+				}
+			}
+		}
+
+		if = {
+			limit = { has_country_flag = IND_comm_mine_caches_prepared }
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Clay County Mine Guard\" division_template = \"Wabash Militia\" start_experience_factor = 0.15 start_equipment_factor = 0.90 start_manpower_factor = 0.95"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"Brazil Relief Battalion\" division_template = \"Wabash Militia\" start_experience_factor = 0.10 start_equipment_factor = 0.85 start_manpower_factor = 0.90"
+					owner = ROOT
+				}
+			}
+		}
+
+		if = {
+			limit = { has_country_flag = IND_comm_calumet_militia_prepared }
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Gary Steelworkers' Column\" division_template = \"Wabash Militia\" start_experience_factor = 0.15 start_equipment_factor = 0.90 start_manpower_factor = 0.95"
+					owner = ROOT
+				}
+				create_unit = {
+					division = "name = \"East Chicago Workers' Guard\" division_template = \"Wabash Militia\" start_experience_factor = 0.15 start_equipment_factor = 0.90 start_manpower_factor = 0.95"
+					owner = ROOT
+				}
 			}
 		}
 	}

@@ -1,0 +1,67 @@
+add_namespace = IND_black_boxes
+
+country_event = {
+	id = IND_black_boxes.1
+	title = IND_black_boxes.1.t
+	desc = IND_black_boxes.1.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_black_boxes.1.a }
+}
+
+country_event = {
+	id = IND_black_boxes.2
+	title = IND_black_boxes.2.t
+	desc = IND_black_boxes.2.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_black_boxes.2.a }
+}
+
+country_event = {
+	id = IND_black_boxes.3
+	title = IND_black_boxes.3.t
+	desc = IND_black_boxes.3.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_black_boxes.3.a }
+}
+
+country_event = {
+	id = IND_black_boxes.4
+	title = IND_black_boxes.4.t
+	desc = IND_black_boxes.4.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_black_boxes.4.a }
+}
+
+country_event = {
+	id = IND_black_boxes.20
+	title = IND_black_boxes.20.t
+	desc = IND_black_boxes.20.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = IND_black_boxes.20.a
+		custom_effect_tooltip = IND_black_boxes_20_a_tt
+		hidden_effect = {
+			set_country_flag = IND_political_crisis_resolved
+			retire_character = IND_paul_v_mcnutt
+			recruit_character = IND_william_dudley_pelley
+			promote_character = IND_william_dudley_pelley
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = { ideology = fascism popularity = 0.35 }
+			add_ideas = IND_silver_administration
+			add_stability = -0.05
+		}
+	}
+}

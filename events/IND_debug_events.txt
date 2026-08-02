@@ -1,0 +1,28 @@
+add_namespace = IND_debug
+
+country_event = {
+	id = IND_debug.1
+	title = IND_debug.1.t
+	desc = IND_debug.1.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+
+	option = {
+		name = IND_debug.1.resources
+		add_political_power = 1000
+		add_stability = 0.50
+		add_war_support = 0.50
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 2000
+			producer = IND
+		}
+	}
+	option = {
+		name = IND_debug.1.purdue
+		country_event = { id = IND_purdue.1 hours = 1 }
+	}
+	option = {
+		name = IND_debug.1.close
+	}
+}

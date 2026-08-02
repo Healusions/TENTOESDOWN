@@ -1,14 +1,49 @@
-
 characters = {
 	IND_paul_v_mcnutt = {
 		name = IND_paul_v_mcnutt
 		portraits = {
-			civilian = {
-				large = "gfx/leaders/PaulNutt.dds"
-			}
+			civilian = { large = "gfx/leaders/PaulNutt.dds" }
 		}
 		country_leader = {
 			ideology = liberalism
+			expire = "1965.1.1"
+		}
+	}
+
+	IND_frank_m_mchale = {
+		name = IND_frank_m_mchale
+		advisor = {
+			slot = political_advisor
+			idea_token = IND_frank_m_mchale
+			ledger = civilian
+			cost = 75
+			allowed = { original_tag = IND }
+			visible = { has_country_flag = IND_mchale_advisor_unlocked }
+			available = { has_country_flag = IND_mchale_advisor_unlocked }
+			traits = { silent_workhorse }
+		}
+	}
+
+	IND_harrison_continuity_council = {
+		name = IND_harrison_continuity_council
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1"
+		}
+	}
+
+	IND_william_dudley_pelley = {
+		name = IND_william_dudley_pelley
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.1.1"
+		}
+	}
+
+	IND_powers_hapgood = {
+		name = IND_powers_hapgood
+		country_leader = {
+			ideology = marxism
 			expire = "1965.1.1"
 		}
 	}

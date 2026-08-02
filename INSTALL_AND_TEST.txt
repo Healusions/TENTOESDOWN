@@ -1,0 +1,80 @@
+TENTOESDOWN — STREAMLINED REBUILD
+
+INSTALL
+
+1. Close Hearts of Iron IV.
+2. Commit or back up the current TENTOESDOWN folder.
+3. Open the supplied ZIP.
+4. Open the folder named TENTOESDOWN.
+5. Copy everything inside it into your existing TENTOESDOWN mod folder.
+6. Merge folders and replace files when Windows asks.
+7. Start a new 1936 game. Old saves are not compatible.
+
+The package deliberately includes small replacement files for every obsolete event and localization file, so drag-and-drop replacement disables the old systems without requiring manual deletion.
+
+FIVE-MINUTE SMOKE TEST
+
+1. Start Indiana on 1 January 1936.
+
+Expected:
+- Exactly four starting national spirits.
+- No Indiana decision category before a route is chosen.
+- A two-page optional briefing that can be skipped without effects.
+
+2. Open the console and enter:
+
+Focus.AutoComplete
+Decision.Fast
+event IND_debug.1
+
+Choose “Add test resources.”
+
+3. Complete A State in Suspension.
+
+Expected:
+- Exactly three mutually exclusive political focuses appear.
+- Harrison, Pelley, and Hapgood are explained directly in their descriptions.
+
+4. Choose The Harrison Offer, then Accounts Behind the Flag.
+
+Expected:
+- One category named The Political Crisis appears.
+- Only Commit the Guarantors is available.
+- Completing it unlocks The Harrison Name.
+- The next action replaces the previous one; actions do not accumulate.
+
+5. Continue through An American Crown.
+
+Expected:
+- Harrison Regency Council becomes leader.
+- Indiana becomes Non-Aligned.
+- The Political Crisis category disappears.
+- A Government Washington Can Name becomes available.
+
+6. Complete A Government Washington Can Name, Whispers from West Lafayette, and The West Lafayette Memorandum.
+
+Expected:
+- Purdue is unavailable before the government handoff.
+- The first Purdue event only reveals the program.
+- The second event offers two clear settlements.
+- Either settlement removes The Federal Standoff and grants the listed nuclear bonus.
+
+Turn Focus.AutoComplete and Decision.Fast off by entering both commands again.
+
+COMMUNIST ROUTE TEST
+
+Use a fresh 1936 game. Follow The Wabash Answer through The Wabash Congress.
+
+Expected:
+- Powers Hapgood becomes leader of the Communist side.
+- A Democratic opposition receives roughly 35 percent of Indiana.
+- The Political Crisis category disappears when war begins.
+- A Government Washington Can Name remains locked while the civil war is active.
+
+LOG CHECK
+
+After testing, close the game and inspect:
+
+Documents\Paradox Interactive\Hearts of Iron IV\logs\error.log
+
+Search for IND_, IND., IND_focus, IND_decisions, IND_ideas, and the TENTOESDOWN path. Errors from unrelated enabled mods should be separated from Indiana errors.

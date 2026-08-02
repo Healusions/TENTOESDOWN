@@ -1,0 +1,38 @@
+TENTOESDOWN STREAMLINED REBUILD — REPLACED FILES
+
+common/characters/IND.txt
+common/decisions/categories/IND_decision_categories.txt
+common/decisions/IND_decisions.txt
+common/ideas/IND_ideas.txt
+common/national_focus/IND_focus.txt
+common/on_actions/IND_on_actions.txt
+events/IND_1816_events.txt
+events/IND_1937_events.txt
+events/IND_black_boxes_events.txt
+events/IND_debug_events.txt
+events/IND_guide_events.txt
+events/IND_hidden_governments_events.txt
+events/IND_intro_events.txt
+events/IND_opening_events.txt
+events/IND_purdue_events.txt
+events/IND_terre_haute_events.txt
+history/countries/IND - Indiana.txt
+localisation/english/IND_l_english.yml
+localisation/english/IND_black_boxes_l_english.yml
+localisation/english/IND_debug_l_english.yml
+localisation/english/IND_hidden_governments_l_english.yml
+localisation/english/IND_intro_l_english.yml
+localisation/english/IND_opening_l_english.yml
+localisation/english/IND_phase5_l_english.yml
+localisation/english/IND_phase5b_l_english.yml
+1936_FLOW.md
+CHANGELOG_STREAMLINED.md
+DESIGN.md
+INSTALL_AND_TEST.txt
+PACKAGE_MANIFEST.txt
+readme.md
+RESEARCH_LEDGER.md
+ROADMAP.md
+VALIDATION_REPORT.txt
+
+All other map, state, flag, portrait, country, name, and order-of-battle files are carried forward unchanged from the current working mod.

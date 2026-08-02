@@ -1,70 +1,188 @@
+IND_the_political_crisis = {
 
-IND_the_terre_haute_question = {
+	##################################
+	# HARRISON / 1816 SOCIETY
+	##################################
 
-	IND_th_hold_the_line = {
-		icon = generic_martial_law
-		cost = 25
-		days_remove = 30
-		fire_only_once = no
-		visible = { has_idea = IND_martial_law_terre_haute }
-		available = { NOT = { has_country_flag = IND_th_posture_set } }
-		complete_effect = {
-			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
-		}
-		remove_effect = {
-			add_to_variable = { IND_underground = 2 }
-			clamp_variable = { var = IND_underground min = 0 max = 100 }
-		}
-	}
-
-	IND_th_ease_the_curfews = {
+	IND_crown_commit_the_guarantors = {
 		icon = generic_civil_support
-		cost = 50
-		days_remove = 30
-		fire_only_once = no
-		visible = { has_idea = IND_martial_law_terre_haute }
-		available = { NOT = { has_country_flag = IND_th_posture_set } }
-		complete_effect = {
-			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
+		cost = 35
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_crown
+			has_country_flag = IND_crown_stage_one
+			NOT = { has_country_flag = IND_crown_guarantors_committed }
 		}
+		complete_effect = { custom_effect_tooltip = IND_crown_commit_the_guarantors_tt }
 		remove_effect = {
-			subtract_from_variable = { IND_underground = 3 }
-			clamp_variable = { var = IND_underground min = 0 max = 100 }
-			add_stability = 0.02
-			add_popularity = {
-				ideology = communism
-				popularity = 0.01
-			}
+			set_country_flag = IND_crown_guarantors_committed
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = -0.01
 		}
+		ai_will_do = { factor = 1 }
 	}
 
-	IND_th_sweep_the_halls = {
+	IND_crown_put_the_petition_in_writing = {
+		icon = generic_civil_support
+		cost = 45
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_crown
+			has_country_flag = IND_crown_stage_two
+			NOT = { has_country_flag = IND_crown_petition_written }
+		}
+		complete_effect = { custom_effect_tooltip = IND_crown_put_the_petition_in_writing_tt }
+		remove_effect = {
+			set_country_flag = IND_crown_petition_written
+			add_stability = 0.02
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	IND_crown_secure_the_statehouse = {
 		icon = generic_prepare_civil_war
-		cost = 75
-		days_remove = 30
-		fire_only_once = no
-		visible = { has_idea = IND_martial_law_terre_haute }
-		available = { NOT = { has_country_flag = IND_th_posture_set } }
-		complete_effect = {
-			set_country_flag = { flag = IND_th_posture_set value = 1 days = 29 }
+		cost = 50
+		days_remove = 25
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_crown
+			has_country_flag = IND_crown_stage_three
+			NOT = { has_country_flag = IND_crown_statehouse_secured }
+		}
+		complete_effect = { custom_effect_tooltip = IND_crown_secure_the_statehouse_tt }
+		remove_effect = {
+			set_country_flag = IND_crown_statehouse_secured
+			army_experience = 10
 			add_stability = -0.02
 		}
-		remove_effect = {
-			random_list = {
-				80 = {
-					subtract_from_variable = { IND_underground = 5 }
-					clamp_variable = { var = IND_underground min = 0 max = 100 }
-				}
-				20 = {
-					add_to_variable = { IND_underground = 8 }
-					clamp_variable = { var = IND_underground min = 0 max = 100 }
-					add_popularity = {
-						ideology = communism
-						popularity = 0.02
-					}
-					add_stability = -0.02
-				}
-			}
+		ai_will_do = { factor = 1 }
+	}
+
+	##################################
+	# PELLEY / SILVER LEGION
+	##################################
+
+	IND_pelley_copy_the_county_index = {
+		icon = generic_civil_support
+		cost = 25
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_pelley
+			has_country_flag = IND_pelley_stage_one
+			NOT = { has_country_flag = IND_pelley_index_copied }
 		}
+		complete_effect = { custom_effect_tooltip = IND_pelley_copy_the_county_index_tt }
+		remove_effect = {
+			set_country_flag = IND_pelley_index_copied
+			add_popularity = { ideology = fascism popularity = 0.02 }
+			add_stability = -0.01
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	IND_pelley_bind_the_county_chairmen = {
+		icon = generic_civil_support
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_pelley
+			has_country_flag = IND_pelley_stage_two
+			NOT = { has_country_flag = IND_pelley_chairmen_bound }
+		}
+		complete_effect = { custom_effect_tooltip = IND_pelley_bind_the_county_chairmen_tt }
+		remove_effect = {
+			set_country_flag = IND_pelley_chairmen_bound
+			add_political_power = 25
+			add_stability = -0.02
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	IND_pelley_replace_the_night_watch = {
+		icon = generic_prepare_civil_war
+		cost = 50
+		days_remove = 25
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_pelley
+			has_country_flag = IND_pelley_stage_three
+			NOT = { has_country_flag = IND_pelley_watch_replaced }
+		}
+		complete_effect = { custom_effect_tooltip = IND_pelley_replace_the_night_watch_tt }
+		remove_effect = {
+			set_country_flag = IND_pelley_watch_replaced
+			add_popularity = { ideology = fascism popularity = 0.03 }
+			add_stability = -0.02
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	##################################
+	# HAPGOOD / WABASH REVOLT
+	##################################
+
+	IND_communist_reopen_the_relief_kitchens = {
+		icon = generic_civil_support
+		cost = 25
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_communist
+			has_country_flag = IND_communist_stage_one
+			NOT = { has_country_flag = IND_communist_kitchens_open }
+		}
+		complete_effect = { custom_effect_tooltip = IND_communist_reopen_the_relief_kitchens_tt }
+		remove_effect = {
+			set_country_flag = IND_communist_kitchens_open
+			add_popularity = { ideology = communism popularity = 0.02 }
+			add_stability = 0.01
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	IND_communist_move_arms_through_the_mine_roads = {
+		icon = generic_prepare_civil_war
+		cost = 40
+		days_remove = 20
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_communist
+			has_country_flag = IND_communist_stage_two
+			NOT = { has_country_flag = IND_communist_arms_moved }
+		}
+		complete_effect = { custom_effect_tooltip = IND_communist_move_arms_through_the_mine_roads_tt }
+		remove_effect = {
+			set_country_flag = IND_communist_arms_moved
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 400
+				producer = IND
+			}
+			add_war_support = 0.02
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	IND_communist_call_the_wabash_congress = {
+		icon = generic_prepare_civil_war
+		cost = 50
+		days_remove = 25
+		fire_only_once = yes
+		visible = {
+			has_country_flag = IND_route_communist
+			has_country_flag = IND_communist_stage_three
+			NOT = { has_country_flag = IND_communist_congress_called }
+		}
+		complete_effect = { custom_effect_tooltip = IND_communist_call_the_wabash_congress_tt }
+		remove_effect = {
+			set_country_flag = IND_communist_congress_called
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_war_support = 0.05
+		}
+		ai_will_do = { factor = 1 }
 	}
 }

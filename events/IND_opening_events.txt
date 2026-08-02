@@ -1,0 +1,28 @@
+add_namespace = IND_opening
+
+country_event = {
+	id = IND_opening.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_flag = IND_campaign_initialized } }
+			set_country_flag = IND_campaign_initialized
+			set_country_flag = IND_mchale_advisor_unlocked
+			set_truce = { target = USA days = 730 }
+			USA = { set_truce = { target = ROOT days = 730 } }
+		}
+	}
+}
+
+country_event = {
+	id = IND_opening.2
+	title = IND_opening.2.t
+	desc = IND_opening.2.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = IND_opening.2.a
+	}
+}

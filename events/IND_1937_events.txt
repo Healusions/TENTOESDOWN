@@ -1,0 +1,22 @@
+add_namespace = IND_1937
+
+country_event = {
+	id = IND_1937.1
+	title = IND_1937.1.t
+	desc = {
+		trigger = { has_country_flag = IND_route_crown }
+		text = IND_1937.1.d_crown
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_pelley }
+		text = IND_1937.1.d_pelley
+	}
+	desc = {
+		trigger = { has_country_flag = IND_route_communist }
+		text = IND_1937.1.d_communist
+	}
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1937.1.a }
+}

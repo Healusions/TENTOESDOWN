@@ -11,10 +11,10 @@ set_politics = {
 }
 
 set_popularities = {
-	democratic = 60
-	neutrality = 22
-	fascism = 9
-	communism = 9
+	democratic = 62
+	neutrality = 18
+	fascism = 10
+	communism = 10
 }
 
 set_technology = {
@@ -26,15 +26,13 @@ set_technology = {
 }
 
 add_ideas = {
-	IND_the_machine
-	IND_two_percent_club
-	IND_martial_law_terre_haute
+	IND_state_in_suspension
+	IND_wabash_emergency
 	IND_federal_embargo
 	IND_consortium_credit
 }
 
-set_variable = { IND_underground = 10 }
-
 recruit_character = IND_paul_v_mcnutt
+recruit_character = IND_frank_m_mchale
 
-###LB NEW LINE FOR RECRUIT CHARACTER BUG
+set_country_flag = IND_history_loaded

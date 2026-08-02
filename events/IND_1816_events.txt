@@ -1,0 +1,67 @@
+add_namespace = IND_1816
+
+country_event = {
+	id = IND_1816.1
+	title = IND_1816.1.t
+	desc = IND_1816.1.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1816.1.a }
+}
+
+country_event = {
+	id = IND_1816.2
+	title = IND_1816.2.t
+	desc = IND_1816.2.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1816.2.a }
+}
+
+country_event = {
+	id = IND_1816.3
+	title = IND_1816.3.t
+	desc = IND_1816.3.d
+	picture = GFX_report_event_journalists_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1816.3.a }
+}
+
+country_event = {
+	id = IND_1816.4
+	title = IND_1816.4.t
+	desc = IND_1816.4.d
+	picture = GFX_report_event_generic_sign_treaty
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { name = IND_1816.4.a }
+}
+
+country_event = {
+	id = IND_1816.20
+	title = IND_1816.20.t
+	desc = IND_1816.20.d
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = IND_1816.20.a
+		custom_effect_tooltip = IND_1816_20_a_tt
+		hidden_effect = {
+			set_country_flag = IND_political_crisis_resolved
+			retire_character = IND_paul_v_mcnutt
+			recruit_character = IND_harrison_continuity_council
+			promote_character = IND_harrison_continuity_council
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = { ideology = neutrality popularity = 0.30 }
+			add_ideas = IND_harrison_regency
+			add_stability = -0.03
+		}
+	}
+}

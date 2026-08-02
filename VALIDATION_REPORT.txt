@@ -1,0 +1,28 @@
+TENTOESDOWN STREAMLINED REBUILD — STATIC VALIDATION
+Date: 1 August 2026
+
+PASSED
+
+- Brace balance and quoted-string checks across 26 game script files.
+- Final-newline checks across game scripts and localization.
+- 21 unique focus definitions and all focus prerequisite references.
+- 23 unique event definitions and all scripted event references.
+- 9 decision definitions inside exactly 1 decision category.
+- 11 national idea definitions and all add/remove/has-idea references.
+- Character recruitment, retirement, and promotion references.
+- 228 unique localization keys.
+- Focus, decision, category, idea, character, event, option, and tooltip localization coverage.
+- UTF-8 BOM on every English localization file.
+- No active references to Federal Pressure, the Route Ledger, Machine Control, Guard Cohesion, Consortium Exposure, Underground Strength, or Occupation Cycles.
+- No prohibited out-of-character language in active narrative localization.
+- All used focus, decision-category, and event-picture graphics exist in the installed HOI4 files.
+- All national-spirit modifiers exist in the installed HOI4 idea files.
+- Special effects checked against installed HOI4 examples: civil-war start, off-map factories, equipment grants, intelligence agency creation, truces, and nuclear research bonuses.
+
+LOG NOTE
+
+The existing 1 August error.log contained no matches for the active IND script names or TENTOESDOWN path. It was dominated by errors from other enabled content and is not an authoritative test of this rebuild.
+
+REMAINING TEST
+
+Static validation cannot execute the HOI4 engine. Start a new 1936 game and follow INSTALL_AND_TEST.txt. The most important engine test is the Wabash civil-war split and the postwar availability of A Government Washington Can Name.
